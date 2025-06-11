@@ -1,0 +1,37 @@
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section footer-about">
+            <h3>Sobre Nós</h3>
+            <p>
+                Somos uma equipe apaixonada por tecnologia, focada em criar soluções inovadoras e de impacto. Nossa missão é entregar valor e excelência em cada projeto.
+            </p>
+        </div>
+        <div class="footer-section footer-team">
+            <h3>Nossa Equipe</h3>
+            <ul>
+                <li>
+                    Renan Oliveira
+                    <a href="https://www.linkedin.com/in/seu-linkedin" target="_blank" title="LinkedIn">
+                        <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.521-1.248-1.342-1.248-.821 0-1.357.539-1.357 1.248 0 .694.52 1.248 1.327 1.248h.014zm4.908 8.212V9.359c0-.215.016-.43.08-.584.174-.429.57-.874 1.235-.874.871 0 1.219.66 1.219 1.627v3.866h2.401V9.304c0-2.22-1.182-3.252-2.758-3.252-1.274 0-1.845.7-2.165 1.193v-1.02H6.542c.029.643 0 7.225 0 7.225h2.401z" />
+                        </svg>
+                    </a>
+                    <a href="https://github.com/seu-github" target="_blank" title="GitHub">
+                        <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.01.08-2.11 0 0 .67-.21 2.2.82a7.58 7.58 0 012-.27c.68.003 1.37.092 2 .27 1.53-1.03 2.2-.82 2.2-.82.44 1.1.16 1.91.08 2.11.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-section footer-contact">
+            <h3>Contato</h3>
+            <form class="footer-form" action="mailto:ro6680476@mail.com" method="POST" enctype="text/plain">
+                <input type="text" name="name" placeholder="Seu nome" required>
+                <input type="email" name="email" placeholder="Seu email" required>
+                <textarea name="message" placeholder="Sua mensagem" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+</footer>
