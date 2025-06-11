@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #000;
+  background-color: #011627;
   color: #fff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
@@ -18,7 +18,7 @@ body {
   max-width: 800px;
   margin: 0 auto;
   width: 100%;
-  padding: 2rem 0;
+  padding: 8px 0;
 }
 
 header {
@@ -58,21 +58,116 @@ header {
   transform: translateY(-50%);
 }
 
+.top-banner {
+  display: block;
+  margin: 3px auto;
+  max-width: 100%;
+  width: 800px;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 15px;
+}
+
+.banner-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+}
+
+.top-banner {
+  display: block;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  margin: 0;
+}
+
+.banner-text {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  z-index: 2;
+  color: #fff;
+  max-width: 350px;
+  background: transparent;
+  padding: 16px 24px;
+  border-radius: 10px;
+  opacity: 0;
+  animation: fadeInText 1s ease-in-out 0.2s forwards;
+}
+
+.banner-title {
+  font-size: 2.3rem;
+  font-weight: bold;
+  margin-bottom: 0.7rem;
+  letter-spacing: 2px;
+}
+
+.banner-desc {
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+
+  .banner-container,
+  .top-banner {
+    max-width: 100%;
+  }
+
+  .banner-text {
+    max-width: 80vw;
+    left: 6%;
+    top: 6%;
+    padding: 10px 14px;
+  }
+
+  .banner-title {
+    font-size: 1.5rem;
+  }
+
+  .banner-desc {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .banner-text {
+    max-width: 95vw;
+    left: 2%;
+    top: 2%;
+    padding: 7px 8px;
+  }
+
+  .banner-title {
+    font-size: 1.15rem;
+  }
+
+  .banner-desc {
+    font-size: 0.98rem;
+  }
+}
+
+@keyframes fadeInText {
+  to {
+    opacity: 1;
+  }
+}
 
 
 .footer {
-  background: #181818;
+  background: #011627;
   color: #fff;
   padding: 25px 0 0 0;
   font-size: 1rem;
-  margin-top: 60px;
-  margin-bottom: 180px;
+  margin-top: 10px;
 }
 
 .footer-container {
   display: flex;
   flex-wrap: wrap;
-  max-width: 1200px;
+  max-width: 1050px;
   margin: 0 auto;
   justify-content: space-between;
   gap: 2rem;
