@@ -1,0 +1,5 @@
+
+Aluno{ra=123456, nome='Aluno Novo', cpf='861.336.400-49', endereco='Rua da Minha Casa, Nº2000'}
+Aluno{ra=123432, nome='Arthur', cpf='123456789', endereco='Umuarama'}
+Aluno{ra=12313, nome='Alexandre Aizono', cpf='887231891', endereco='Serra'}
+Aluno{ra=4234212, nome='Daniel Sate', cpf='12312313', endereco='12313'}
