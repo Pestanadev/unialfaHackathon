@@ -1,6 +1,6 @@
 <?php 
 
-class ApiNode
+class ApiComNode
 {
     private string $baseUrl;
 

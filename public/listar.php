@@ -1,7 +1,7 @@
 <?php
-    require_once 'classes/ApiComNode.php';
+    require_once '../classes/ApiComNode.php';
 
-    $api = new ApiNode();
+    $api = new ApiComNode();
     $usuarios = $api->getPosts(); // agora é sua API própria que retorna usuários
 ?>
 
