@@ -1,12 +1,11 @@
-package uniAlfa.hackathon.dao;
-
-import uniAlfa.hackathon.model.Evento;
+package unialfa.hackathon.dao;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+
+import unialfa.hackathon.model.Evento;
 
 public class EventoDao extends Dao implements DaoInterface {
 
@@ -56,7 +55,7 @@ public class EventoDao extends Dao implements DaoInterface {
 
             while (resultSet.next()) {
                 Evento evento = new Evento(
-                        resultSet.getLong("ra"),
+                        resultSet.getLong("cod"),
                         resultSet.getString("nome"),
                         resultSet.getString("valor"),
                         resultSet.getString("urlImg"),

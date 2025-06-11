@@ -1,11 +1,16 @@
-package uniAlfa.hackathon.service;
+package unialfa.hackathon.service;
 
-import uniAlfa.hackathon.dao.EventoDao;
-import uniAlfa.hackathon.model.Evento;
-
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import unialfa.hackathon.dao.EventoDao;
+import unialfa.hackathon.model.Evento;
 
 public class EventoService {
 
@@ -24,7 +29,7 @@ public class EventoService {
     }
 
     public void salvar(Evento evento) {
-        var arquivo = new File(System.getProperty("user.dir"), "\\alunos.txt");
+        var arquivo = new File(System.getProperty("user.dir"), "\\relatorio_eventos.txt");
         writerFile(evento.toString(), arquivo.toString());
     }
 

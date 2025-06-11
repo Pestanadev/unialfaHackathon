@@ -1,23 +1,32 @@
-package uniAlfa.hackathon.gui;
+package unialfa.hackathon.gui;
 
-import uniAlfa.hackathon.model.Evento;
-import uniAlfa.hackathon.service.EventoService;
-
-import javax.swing.*;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.table.DefaultTableModel;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.table.DefaultTableModel;
+
+import unialfa.hackathon.model.Evento;
+import unialfa.hackathon.service.EventoService;
+
 public class EventoGui extends JFrame implements GuiUtil {
 
     private final EventoService eventoService;
 
-    private JLabel jlRa;
-    private JTextField tfRa;
+    private JLabel jlCod;
+    private JTextField tfCod;
 
     private JLabel jlNome;
     private JTextField tfNome;
@@ -70,8 +79,8 @@ public class EventoGui extends JFrame implements GuiUtil {
     private JPanel montarPainelEntrada() {
         var jPanel = new JPanel(new GridBagLayout());
 
-        jlRa = new JLabel("Ra:");
-        tfRa = new JTextField(20);
+        jlCod = new JLabel("Cod:");
+        tfCod = new JTextField(20);
         jlNome = new JLabel("Nome:");
         tfNome = new JTextField(20);
         jlValor = new JLabel("Valor:");
@@ -100,8 +109,8 @@ public class EventoGui extends JFrame implements GuiUtil {
         btListar.addActionListener(this::listarEventos);
 
         int y = 0;
-        jPanel.add(jlRa, montarGrid(0, y));
-        jPanel.add(tfRa, montarGrid(1, y++));
+        jPanel.add(jlCod, montarGrid(0, y));
+        jPanel.add(tfCod, montarGrid(1, y++));
         jPanel.add(jlNome, montarGrid(0, y));
         jPanel.add(tfNome, montarGrid(1, y++));
         jPanel.add(jlValor, montarGrid(0, y));
@@ -143,10 +152,10 @@ public class EventoGui extends JFrame implements GuiUtil {
         return jPanel;
     }
 
-    private void selecionarEvento(ListSelectionEvent event) {
+    private void selecionarEvento(ListSelectionEvent ignored) {
         int selectedRow = tabela.getSelectedRow();
         if (selectedRow != -1) {
-            tfRa.setText(tabela.getValueAt(selectedRow, 0).toString());
+            tfCod.setText(tabela.getValueAt(selectedRow, 0).toString());
             tfNome.setText(tabela.getValueAt(selectedRow, 1).toString());
             tfValor.setText(tabela.getValueAt(selectedRow, 2).toString());
             tfUrlImg.setText(tabela.getValueAt(selectedRow, 3).toString());
@@ -162,7 +171,7 @@ public class EventoGui extends JFrame implements GuiUtil {
 
     private DefaultTableModel carregarEventos() {
         var model = new DefaultTableModel();
-        model.addColumn("RA");
+        model.addColumn("Codigo");
         model.addColumn("Nome");
         model.addColumn("Valor");
         model.addColumn("UrlImg");
@@ -176,7 +185,7 @@ public class EventoGui extends JFrame implements GuiUtil {
 
         eventoService.listarBD().forEach(evento -> {
             model.addRow(new Object[]{
-                    evento.getRa(),
+                    evento.getCod(),
                     evento.getNome(),
                     evento.getValor(),
                     evento.getUrlImg(),
@@ -199,11 +208,11 @@ public class EventoGui extends JFrame implements GuiUtil {
 
     private void salvarEvento(ActionEvent event) {
         try {
-            Long ra = tfRa.getText().isBlank() ? 0L : Long.parseLong(tfRa.getText());
+            Long cod = tfCod.getText().isBlank() ? 0L : Long.parseLong(tfCod.getText());
             Date dataFormatada = new SimpleDateFormat("dd/MM/yyyy").parse(tfData.getText());
 
             var evento = new Evento(
-                    ra,
+                    cod,
                     tfNome.getText(),
                     tfValor.getText(),
                     tfUrlImg.getText(),
@@ -226,7 +235,7 @@ public class EventoGui extends JFrame implements GuiUtil {
     }
 
     private void limparCampos() {
-        tfRa.setText("");
+        tfCod.setText("");
         tfNome.setText("");
         tfValor.setText("");
         tfUrlImg.setText("");

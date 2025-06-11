@@ -1,6 +1,7 @@
-package uniAlfa.hackathon.gui;
+package unialfa.hackathon.gui;
 
-import java.awt.*;
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
 
 public interface GuiUtil {
 
