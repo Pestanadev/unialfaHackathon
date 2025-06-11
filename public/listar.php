@@ -1,10 +1,9 @@
 <?php
-    require_once '../classes/ApiComNode.php';
+require_once '../classes/ApiComNode.php';
 
-    $api = new ApiComNode();
-    $usuarios = $api->getPosts(); // agora é sua API própria que retorna usuários
+$api = new ApiComNode();
+$usuarios = $api->getPosts();
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lista de Usuários</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -21,23 +20,28 @@
 </head>
 
 <body>
-    <div class="centralizado">
+    <div class="container my-5">
         <?php include '../templates/header.php'; ?>
 
-        <div class="card" style="width: 23rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <?php foreach($usuarios as $usuario): ?>
-                    <div class="card">
-                        <h2><?= htmlspecialchars($usuario['nome']) ?></h2>
-                        <p><strong>Email:</strong> <?= htmlspecialchars($usuario['email']) ?></p>
+        <div class="row g-4">
+            <?php foreach ($usuarios as $usuario): ?>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="" class="card-img-top" alt="Foto do evento">
+                        <div class="card-body">
+                            <h5 class="card-title"><?= htmlspecialchars($usuario['nome']) ?></h5>
+                            <p class="card-text"><strong>Email:</strong> <?= htmlspecialchars($usuario['email']) ?></p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="#" class="btn btn-primary">Ver mais</a>
+                        </div>
                     </div>
-                <?php endforeach; ?>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
+                </div>
+            <?php endforeach; ?>
         </div>
+
+        <?php include '../templates/footer.php'; ?>
     </div>
-    <?php include '../templates/footer.php'; ?>
 </body>
 
 </html>
