@@ -8,30 +8,27 @@ class ApiComNode
     {
         $this->baseUrl = 'http://localhost:3001';
     }
-    public function getPosts()
-{
-    $url = $this->baseUrl . '/usuarios';
+    public function getEventos()
+    {
+        $url = $this->baseUrl . '/evento';
 
-    $curl = curl_init($url);
-    curl_setopt_array($curl, [
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_TIMEOUT => 10,
-        CURLOPT_HTTPHEADER => [
-            'Accept: application/json',
-            'User-Agent: PHP-Eventos-App'
-        ]
-    ]);
+        $curl = curl_init($url);
+        curl_setopt_array($curl, [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_TIMEOUT => 10,
+            CURLOPT_HTTPHEADER => [
+                'Accept: application/json',
+                'User-Agent: PHP-Eventos-App'
+            ]
+        ]);
 
-    $response = curl_exec($curl);
-    curl_close($curl);
+        $response = curl_exec($curl);
+        curl_close($curl);
 
-    if (!$response) {
-        return [];
+        if (!$response) {
+            return [];
+        }
+
+        return json_decode($response, true);
     }
-
-    $data = json_decode($response, true);
-
-    return $data['usuarios'] ?? [];
-}
-
 }

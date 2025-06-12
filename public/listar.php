@@ -2,7 +2,7 @@
 require_once '../classes/ApiComNode.php';
 
 $api = new ApiComNode();
-$eventos = $api->getPosts();
+$eventos = $api->getEventos();
 ?>
 
 <!DOCTYPE html>
@@ -24,13 +24,13 @@ $eventos = $api->getPosts();
         <?php include '../templates/header.php'; ?>
 
         <div class="row g-4">
-            <?php foreach ($eventos as $evento): ?>
+            <?php foreach($eventos as $eventos): ?>
                 <div class="col-md-4">
                     <div class="card h-100">
-                        <img src="" class="card-img-top" alt="Foto do evento">
+                        <img src="<?= htmlspecialchars($eventos['urlImg']) ?>" class="card-img-top" alt="Foto do evento">
                         <div class="card-body">
-                            <h5 class="card-title"><?= htmlspecialchars($evento['nome']) ?></h5>
-                            <p class="card-text"><strong>Email:</strong> <?= htmlspecialchars($evento['email']) ?></p>
+             <h5 class="card-title"><?= htmlspecialchars($eventos['nome']) ?></h5>
+                            <p class="card-text"><strong>descrição:</strong> <?= htmlspecialchars($eventos['descricao']) ?></p>
                         </div>
                         <div class="card-footer text-center">
                             <a href="#" class="btn btn-primary">Ver mais</a>
@@ -39,6 +39,7 @@ $eventos = $api->getPosts();
                 </div>
             <?php endforeach; ?>
         </div>
+
 
         <?php include '../templates/footer.php'; ?>
     </div>
