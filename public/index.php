@@ -16,6 +16,15 @@
     <div class="centralizado">
         <?php include '../templates/header.php'; ?>
 
+        <div class="banner-container">
+            <div class="banner-text">
+                <h1 class="banner-title">Descubra seu Próximo Evento</h1>
+                <p class="banner-desc">Venha participar de uma experiência única! Participe dos nossos Eventos.</p>
+                <a href="#eventos" class="btn-ver-eventos">Ver Eventos</a>
+            </div>
+            <img src="../style/img/banner1.png" alt="banner1" class="top-banner">
+        </div>
+
         <div class="card" style="width: 23rem;">
             <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
@@ -24,6 +33,7 @@
                 <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
+
     </div>
     <?php include '../templates/footer.php'; ?>
 </body>
