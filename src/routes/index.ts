@@ -1,8 +1,8 @@
 import { Router } from 'express'
-import eventos from './eventos'
+import evento from './evento'
 
 const routes = Router()
 
-routes.use('/eventos', eventos)
+routes.use('/evento', evento)
 
 export default routes

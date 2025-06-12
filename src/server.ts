@@ -18,6 +18,7 @@ const PORT = 3001
 //inicializando as rotas\
 app.use(routes)
 
+
 app.use ((
 error: Error, req: Request, res: Response, next: NextFunction) => {
 
@@ -42,6 +43,8 @@ if (res.headersSent) {
     })  
     return
 })
+
+
 
 app.listen(PORT, () => {
 console.log('Servidor rodando na porta:' + PORT)

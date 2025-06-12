@@ -5,8 +5,8 @@ const router = Router();
 
 // Rota para buscar os eventos
 router.get('/', async (req, res) => {
-    knex('eventos').then((eventos) => {
-        res.json(eventos);
+    knex('evento').then((evento) => {
+        res.json(evento);
     })
 })
 
