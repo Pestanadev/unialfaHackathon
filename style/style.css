@@ -50,12 +50,32 @@ header {
 }
 
 #logo {
+  height: 130px;
+  max-height: 80px;
+  width: auto;
   padding-left: 15rem;
   position: absolute;
-  height: 130px;
   top: 50%;
   left: 0;
   transform: translateY(-50%);
+  transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+  #logo {
+    position: static;
+    height: 130px;
+    max-height: 48px;
+    padding-left: 0;
+    margin-right: auto;
+    transform: none;
+    display: block;
+  }
+
+  .container-fluid {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
 }
 
 .top-banner {
@@ -155,6 +175,102 @@ header {
   }
 }
 
+.banner-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+}
+
+.top-banner {
+  display: block;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  margin: 0;
+  border-radius: 20px;
+}
+
+.banner-text {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  z-index: 2;
+  color: #fff;
+  max-width: 350px;
+  background: transparent;
+  padding: 16px 24px 24px 24px;
+  border-radius: 16px;
+  opacity: 0;
+  animation: fadeInText 1s ease-in-out 0.2s forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.btn-ver-eventos {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 28px;
+  background: #011627;
+  color: #ffffff;
+  font-size: 1.12rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(24, 24, 24, 0.07);
+  transition: background 0.5s, transform 0.15s;
+  cursor: pointer;
+}
+
+.btn-ver-eventos:hover,
+.btn-ver-eventos:focus {
+  background: #41EAD4;
+  transform: translateY(-2px) scale(1.03);
+  color: #000000;
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+
+  .banner-container,
+  .top-banner {
+    max-width: 100%;
+  }
+
+  .banner-text {
+    max-width: 80vw;
+    left: 6%;
+    top: 6%;
+    padding: 10px 14px 18px 14px;
+  }
+
+  .banner-title {
+    font-size: 1.5rem;
+  }
+
+  .banner-desc {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .banner-text {
+    max-width: 97vw;
+    left: 2%;
+    top: 2%;
+    padding: 7px 7px 15px 7px;
+  }
+
+  .banner-title {
+    font-size: 1.15rem;
+  }
+
+  .banner-desc {
+    font-size: 0.98rem;
+  }
+}
 
 .footer {
   background: #011627;
@@ -175,7 +291,7 @@ header {
 }
 
 .footer-section {
-  flex: 1 1 250px;
+  flex: 1 1 150px;
   min-width: 220px;
   margin-bottom: 40px;
 }
