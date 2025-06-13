@@ -7,13 +7,9 @@ public class Dao {
 
     private Connection connection;
 
-    /**
-     * Construtor da classe Dao responsável por inicializar a conexão com o banco de dados MySQL.
-     * <p>
-     * Este construtor carrega o driver JDBC do MySQL e estabelece uma conexão com o banco de dados
-     * 'hackathon' localizado em localhost na porta 3306. O usuário utilizado é 'root' e a senha está vazia.
-     * Caso ocorra alguma exceção durante o processo, a mensagem de erro será impressa no console.
-     * </p>
+    /*
+     * Construtor da classe Dao.
+     * Inicializa a conexão com o banco de dados MySQL.
      */
     public Dao() {
         try {
@@ -21,8 +17,9 @@ public class Dao {
             this.connection = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/hackathon?useTimezone=true&serverTimezone=UTC",
                     "root",
-                    ""); // senha vazia
+                    ""); // Sem senha para o usuário root, ajuste conforme necessário
 
+        // Exibir mensagem de erro caso a conexão falhe
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
