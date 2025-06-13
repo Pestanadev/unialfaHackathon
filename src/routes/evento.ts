@@ -10,4 +10,20 @@ router.get('/', async (req, res) => {
     })
 })
 
+// Rota para buscar um evento específico pelo ID
+router.get('/:id', async (req, res) => {
+     const { id } = req.params;
+
+  const evento = await knex('evento').where({ id }).first();
+
+    if (!evento) {
+         res.status(404).json({
+            message: "Evento não encontrado"
+        })
+        return;
+    }
+    
+    res.json(evento);
+})
+
 export default router

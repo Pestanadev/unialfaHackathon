@@ -120,4 +120,23 @@ router.put("/editar/:id",autenticacao ,async (req, res) => {
   })
 })
 
+// Rota para deletar um aluno específico pelo ID
+router.delete("/deletar/:id", autenticacao ,async (req, res) => {
+  const { id } = req.params;
+
+  const aluno = await knex('alunos').where({ id }).first()
+
+  if (!aluno) {
+    res.status(404).json({
+      message: "Aluno não encontrado"
+    })
+    return;
+  }
+
+  await knex('alunos').where({ id }).delete();
+
+  res.status(200).json({
+    message: "Aluno deletado com sucesso"})
+})
+
 export default router
