@@ -12,6 +12,9 @@
                         <a class="nav-link active" aria-current="page" href="../public/index.php">Home</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="../public/eventos.php">Eventos</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="../public/MeusEventos.php">Meus Eventos</a>
                     </li>
                     <li class="nav-item">
