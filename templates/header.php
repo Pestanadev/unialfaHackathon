@@ -9,7 +9,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="../public/index.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Meus Eventos</a>
@@ -18,7 +18,7 @@
                         <a class="nav-link" href="#">Meus Certificados</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Eu</a>
+                        <a class="nav-link" href="../forms/login.php">Eu</a>
                     </li>
                 </ul>
             </div>

@@ -25,7 +25,7 @@
             <img src="../style/img/banner1.png" alt="banner1" class="top-banner">
         </div>
 
-        <div class="card" style="width: 23rem;">
+        <div class="card" style="width: 16rem;">
             <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
@@ -34,8 +34,8 @@
             </div>
         </div>
 
+        <?php include '../templates/footer.php'; ?>
     </div>
-    <?php include '../templates/footer.php'; ?>
 </body>
 
 </html>
