@@ -15,7 +15,7 @@ app.use(express.json())
 const PORT = 3001
 
 
-//inicializando as rotas\
+//inicializando as rotas
 app.use(routes)
 
 
