@@ -33,7 +33,9 @@ $eventos = $api->getEventos();
                             <p class="card-text"><strong>descrição:</strong> <?= htmlspecialchars($eventos['descricao']) ?></p>
                         </div>
                         <div class="card-footer text-center">
-                            <a href="#" class="btn btn-primary">Ver mais</a>
+                            <a href="eventos.php?cod=<?= urlencode($eventos['cod']) ?>" class="btn btn-primary">Ver mais</a>
+
+
                         </div>
                     </div>
                 </div>
