@@ -1,4 +1,4 @@
-package unialfa.hackathon.gui;
+package uniAlfa.hackathon.gui;
 
 import java.awt.BorderLayout;
 import java.awt.GridBagLayout;
@@ -18,8 +18,8 @@ import javax.swing.JTextField;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.table.DefaultTableModel;
 
-import unialfa.hackathon.model.Evento;
-import unialfa.hackathon.service.EventoService;
+import uniAlfa.hackathon.model.Evento;
+import uniAlfa.hackathon.service.EventoService;
 
 public class EventoGui extends JFrame implements GuiUtil {
 

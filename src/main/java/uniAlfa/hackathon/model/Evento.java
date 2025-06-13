@@ -1,4 +1,4 @@
-package unialfa.hackathon.model;
+package uniAlfa.hackathon.model;
 
 import java.util.Date;
 

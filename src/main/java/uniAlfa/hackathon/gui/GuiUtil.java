@@ -1,4 +1,4 @@
-package unialfa.hackathon.gui;
+package uniAlfa.hackathon.gui;
 
 public interface GuiUtil {
 // Método para montar as restrições de layout do GridBagLayout

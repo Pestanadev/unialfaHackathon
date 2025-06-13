@@ -1,4 +1,4 @@
-package unialfa.hackathon.service;
+package uniAlfa.hackathon.service;
 
 import java.io.BufferedWriter; // é um pacote que contém classes para manipulação de entrada e saída de dados, como leitura e escrita em arquivos.
 import java.io.File;
@@ -7,8 +7,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import unialfa.hackathon.dao.EventoDao;
-import unialfa.hackathon.model.Evento;
+import uniAlfa.hackathon.dao.EventoDao;
+import uniAlfa.hackathon.model.Evento;
 
 public class EventoService {
 

@@ -1,11 +1,11 @@
-package unialfa.hackathon.dao;
+package uniAlfa.hackathon.dao;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import unialfa.hackathon.model.Evento;
+import uniAlfa.hackathon.model.Evento;
 
 public class EventoDao extends Dao implements DaoInterface {
 

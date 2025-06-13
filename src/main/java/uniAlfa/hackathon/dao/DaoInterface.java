@@ -1,4 +1,4 @@
-package unialfa.hackathon.dao;
+package uniAlfa.hackathon.dao;
 
 import java.util.List;
 

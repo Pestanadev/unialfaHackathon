@@ -1,9 +1,9 @@
-package unialfa.hackathon;
+package uniAlfa.hackathon;
 
 import javax.swing.SwingUtilities;
 
-import unialfa.hackathon.gui.EventoGui;
-import unialfa.hackathon.service.EventoService;
+import uniAlfa.hackathon.gui.EventoGui;
+import uniAlfa.hackathon.service.EventoService;
 
 /*
  * Classe principal para iniciar a aplicação.
