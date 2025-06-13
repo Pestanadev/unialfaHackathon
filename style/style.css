@@ -50,8 +50,8 @@ header {
 }
 
 #logo {
-  height: 130px;
-  max-height: 130px;
+  height: 45px;
+  max-height: 48px;
   width: auto;
   padding-left: 15rem;
   position: absolute;
@@ -64,7 +64,7 @@ header {
 @media (max-width: 768px) {
   #logo {
     position: static;
-    height: 130px;
+    height: 45px;
     max-height: 48px;
     padding-left: 0;
     margin-right: auto;

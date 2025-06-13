@@ -9,7 +9,7 @@
 <body>
   <div class="login-container">
     <div class="login-left" id="login-left">
-      <form class="form-area" id="login-form">
+      <form class="form-area" id="login-form" method="POST" action="../public/index.php">
         <img src="../style/img/logowhite.png" alt="logo" class="logo-form">
         <h2>Acesse sua conta</h2>
         <label for="login-email">E-mail</label>
@@ -22,7 +22,8 @@
         </div>
       </form>
 
-      <form class="form-area" id="register-form" style="display:none;">
+      <form class="form-area" id="register-form" style="display:none;" method="POST" action="../public/index.php">
+        <img src="../style/img/logowhite.png" alt="logo" class="logo-form">
         <h2>Criar conta</h2>
         <label for="register-name">Nome</label>
         <input type="text" id="register-name" name="register-name" required>
