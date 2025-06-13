@@ -310,7 +310,20 @@ header {
   margin-bottom: 12px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.footer-team-name {
+  flex: 1 1 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.footer-team-icons {
+  display: flex;
+  gap: 6px;
 }
 
 .footer-team a {
