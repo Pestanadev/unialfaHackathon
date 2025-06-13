@@ -36,6 +36,7 @@ body {
   max-width: 100%;
   height: auto;
   margin-left: 0;
+  padding-left: 75px;
 }
 
 .form-area h2 {
@@ -108,12 +109,12 @@ body {
 .logo-overlay {
   position: relative;
   z-index: 2;
-  width: 400px;
+  width: 330px;
   max-width: 100%;
   margin: 0 auto;
   display: block;
   filter: drop-shadow(0 2px 12px #0007);
-  padding-bottom: 380px;
+  padding-bottom: 400px;
 }
 
 @media (max-width: 900px) {
