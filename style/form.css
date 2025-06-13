@@ -30,7 +30,16 @@ body {
   gap: 14px;
 }
 
+.logo-form {
+  display: block;
+  width: 180px;
+  max-width: 100%;
+  height: auto;
+  margin-left: 0;
+}
+
 .form-area h2 {
+  margin-top: 2px;
   margin-bottom: 10px;
   font-size: 2rem;
   color: #41EAD4;
@@ -66,6 +75,7 @@ body {
 
 .form-footer {
   margin-top: 12px;
+  margin-bottom: 110px;
   font-size: 0.95rem;
   text-align: left;
 }
@@ -85,7 +95,7 @@ body {
   justify-content: center;
 }
 .image-bg {
-  background: url('https://i.pinimg.com/736x/fb/81/44/fb81441bd3cc7fd7f9fb76fdd434b0a1.jpg') no-repeat center center/cover;
+  background: url('https://i.pinimg.com/736x/99/4e/aa/994eaae66bdc4648fa3b0ed54f040c22.jpg') no-repeat center center/cover;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -95,11 +105,12 @@ body {
 .logo-overlay {
   position: relative;
   z-index: 2;
-  width: 500px;
+  width: 400px;
   max-width: 100%;
   margin: 0 auto;
   display: block;
   filter: drop-shadow(0 2px 12px #0007);
+  padding-bottom: 380px;
 }
 
 @media (max-width: 900px) {
@@ -121,11 +132,11 @@ body {
 
 @media (max-width: 540px) {
   .form-area {
-    max-width: 100vw;
+    max-width: 90vw;
     padding: 0;
   }
   .logo-overlay {
-    width: 80px;
+    width: 380px;
   }
   .login-left, .login-right {
     padding: 16px 4px;

@@ -10,6 +10,7 @@
   <div class="login-container">
     <div class="login-left" id="login-left">
       <form class="form-area" id="login-form">
+        <img src="../style/img/logowhite.png" alt="logo" class="logo-form">
         <h2>Acesse sua conta</h2>
         <label for="login-email">E-mail</label>
         <input type="email" id="login-email" name="login-email" required>
@@ -40,7 +41,7 @@
 
     <div class="login-right">
       <div class="image-bg"></div>
-      <img src="../style/img/logoeventUnialfaWhite.png" alt="Logo" class="logo-overlay">
+      <img src="../style/img/even_unialfaLogo.png" alt="Logo" class="logo-overlay">
     </div>
   </div>
 
