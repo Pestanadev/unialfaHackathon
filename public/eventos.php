@@ -70,7 +70,6 @@ if (!$eventoSelecionado) {
                 </div>
             </div>
         </div>
-        
 
         <?php include '../templates/footer.php'; ?>
     </div>
