@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>EventFlow</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -33,9 +33,18 @@
                 <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
-
-        <?php include '../templates/footer.php'; ?>
+        <div class="col-md-6" id="divMaps">
+            <iframe
+                src="https://www.google.com/maps/embed/v1/place?q=Av.%20Paran%C3%A1,%207327%20-%20Zona%20III,%20Umuarama%20-%20PR,%2087502-000&key=AIzaSyCLzO0N2NyOSOwEoHxHl1SZ6osym2fHlkE"
+                width="100%"
+                height="400"
+                frameborder="0"
+                style="border:0;"
+                allowfullscreen>
+            </iframe>
+        </div>
     </div>
+    <?php include '../templates/footer.php'; ?>
 </body>
 
 </html>
