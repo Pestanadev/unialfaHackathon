@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Meus Eventos</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -13,16 +13,11 @@
 </head>
 
 <body>
-    <div class="centralizado">
-        <?php include '../templates/header.php'; ?>
+    <?php include '../templates/header.php'; ?>
 
-<<<<<<< HEAD
-=======
-      <?php include '../forms/cadastro.php'; ?>
->>>>>>> origin/main
 
-        <?php include '../templates/footer.php'; ?>
-    </div>
+
+    <?php include '../templates/footer.php'; ?>
 </body>
 
 </html>

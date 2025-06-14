@@ -50,8 +50,8 @@ header {
 }
 
 #logo {
-  height: 130px;
-  max-height: 130px;
+  height: 45px;
+  max-height: 48px;
   width: auto;
   padding-left: 15rem;
   position: absolute;
@@ -64,7 +64,7 @@ header {
 @media (max-width: 768px) {
   #logo {
     position: static;
-    height: 130px;
+    height: 45px;
     max-height: 48px;
     padding-left: 0;
     margin-right: auto;
@@ -272,6 +272,61 @@ header {
   }
 }
 
+.evento-erro-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  background: transparent;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+.evento-erro-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 6px 32px rgba(14, 118, 168, 0.09);
+  padding: 40px 28px 32px 28px;
+  text-align: center;
+  max-width: 400px;
+  margin: 32px auto;
+}
+
+.evento-erro-card img {
+  width: 76px;
+  margin-bottom: 18px;
+  opacity: 0.7;
+}
+
+.evento-erro-card h2 {
+  color: #0e76a8;
+  margin-bottom: 14px;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.evento-erro-card p {
+  font-size: 1.08rem;
+  color: #333;
+  margin-bottom: 22px;
+  line-height: 1.5;
+}
+
+.evento-erro-card .btn {
+  padding: 10px 32px;
+  font-weight: 600;
+  border-radius: 22px;
+  font-size: 1rem;
+  background: #0e76a8;
+  border: none;
+  transition: background 0.2s;
+}
+
+.evento-erro-card .btn:hover {
+  background: #41ead4;
+  color: #011627;
+}
+
 .footer {
   background: #011627;
   color: #fff;
@@ -298,6 +353,7 @@ header {
 
 .footer-about p {
   margin-top: 10px;
+  padding-right: 15px;
 }
 
 .footer-team ul {
@@ -310,7 +366,21 @@ header {
   margin-bottom: 12px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.footer-team-name {
+  flex: 1 1 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.footer-team-icons {
+  display: flex;
+  gap: 6px;
+  padding-right: 20px;
 }
 
 .footer-team a {
@@ -329,39 +399,35 @@ header {
   color: #c9d1d9;
 }
 
-.footer-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.footer-form input,
-.footer-form textarea {
-  padding: 8px;
-  border: none;
-  border-radius: 4px;
-  font-size: 0.95rem;
-  resize: none;
-}
-
-.footer-form textarea {
-  min-height: 60px;
-  max-width: 100%;
-}
-
-.footer-form button {
+.organizar-evento-link {
+  display: inline-block;
   background: #0e76a8;
   color: #fff;
-  border: none;
-  border-radius: 4px;
-  padding: 8px 0;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.2s;
+  padding: 10px 24px;
+  border-radius: 24px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 12px;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 8px rgba(14, 118, 168, 0.10);
 }
 
-.footer-form button:hover {
-  background: #05486b;
+.organizar-evento-link:hover,
+.organizar-evento-link:focus {
+  background: #41EAD4;
+  color: #011627;
+  box-shadow: 0 4px 18px rgba(65, 234, 212, 0.10);
+  text-decoration: none;
+}
+
+.footer-section:not(:last-child) {
+  border-right: 1.5px solid rgba(255, 255, 255, 0.11);
+}
+
+@media (max-width: 900px) {
+  .footer-section {
+    border: none !important;
+  }
 }
 
 @media (max-width: 900px) {
