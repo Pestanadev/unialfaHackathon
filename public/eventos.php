@@ -36,7 +36,7 @@ if (!$eventoSelecionado) {
                 <img src="https://cdn-icons-png.flaticon.com/512/4076/4076549.png" alt="Nenhum evento encontrado">
                 <h2>Evento não encontrado</h2>
                 <p>Não encontramos o evento que você procura.<br>
-                    Verifique se o código está correto ou veja a lista de eventos disponíveis.</p>
+                    Verifique se o nome está correto ou veja a lista de eventos disponíveis.</p>
                 <a href="../public/listar.php" class="btn btn-primary">Ver todos os eventos</a>
             </div>
         </div>

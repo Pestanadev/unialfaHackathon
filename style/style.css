@@ -353,6 +353,7 @@ header {
 
 .footer-about p {
   margin-top: 10px;
+  padding-right: 15px;
 }
 
 .footer-team ul {
@@ -379,7 +380,7 @@ header {
 .footer-team-icons {
   display: flex;
   gap: 6px;
-  padding-right: 100px;
+  padding-right: 20px;
 }
 
 .footer-team a {
