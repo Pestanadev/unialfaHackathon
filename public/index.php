@@ -34,16 +34,15 @@
             </div>
         </div>
         <div class="col-md-6" id="divMaps">
-                <iframe
-                    src="https://www.google.com/maps/embed/v1/place?q=Av.%20Paran%C3%A1,%207327%20-%20Zona%20III,%20Umuarama%20-%20PR,%2087502-000&key=AIzaSyCLzO0N2NyOSOwEoHxHl1SZ6osym2fHlkE" 
-                    width="100%" 
-                    height="400" 
-                    frameborder="0" 
-                    style="border:0;" 
-                    allowfullscreen>
-                </iframe>
-            </div>
-
+            <iframe
+                src="https://www.google.com/maps/embed/v1/place?q=Av.%20Paran%C3%A1,%207327%20-%20Zona%20III,%20Umuarama%20-%20PR,%2087502-000&key=AIzaSyCLzO0N2NyOSOwEoHxHl1SZ6osym2fHlkE"
+                width="100%"
+                height="400"
+                frameborder="0"
+                style="border:0;"
+                allowfullscreen>
+            </iframe>
+        </div>
         <?php include '../templates/footer.php'; ?>
     </div>
 </body>
