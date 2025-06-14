@@ -5,11 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro no Evento</title>
-    <link rel="stylesheet" href="../style/form.css">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../style/cadastro.css">
 </head>
 
 <body>
+    <?php include '../templates/header.php'; ?>
     <div class="evento-bg-topo"></div>
     <div class="centraliza-tudo">
         <div class="evento-box-white">
@@ -53,30 +56,31 @@
                 <img src="../style/img//logo.png" alt="logo" class="logo-form">
                 <h2>Inscreva-se no Evento</h2>
                 <label for="nome">Nome</label>
-                <input type="text" id="nome" name="nome" required>
+                <input type="text" id="nome" name="nome" placeholder="Nome: " required>
 
                 <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" placeholder="Email: " required>
 
                 <label for="cep">CEP</label>
-                <input type="text" id="cep" name="cep" required pattern="\d{5}-?\d{3}" placeholder="00000-000">
+                <input type="text" id="cep" name="cep" required pattern="\d{5}-?\d{3}" placeholder="Ex: 00000-000">
 
                 <label for="estado">Estado</label>
-                <input type="text" id="estado" name="estado" required>
+                <input type="text" id="estado" name="estado" placeholder="Estado: " required>
 
                 <label for="cidade">Cidade</label>
-                <input type="text" id="cidade" name="cidade" required>
+                <input type="text" id="cidade" name="cidade" placeholder="Cidade: " required>
 
                 <label for="bairro">Bairro</label>
-                <input type="text" id="bairro" name="bairro" required>
+                <input type="text" id="bairro" name="bairro" placeholder="Bairro: " required>
 
                 <label for="logradouro">Logradouro</label>
-                <input type="text" id="logradouro" name="logradouro" required>
+                <input type="text" id="logradouro" name="logradouro" placeholder="Logradouro: " required>
 
                 <button type="submit">Inscrever-se</button>
             </form>
         </div>
     </div>
+
 </body>
 
 </html>
