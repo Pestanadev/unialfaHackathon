@@ -16,9 +16,35 @@ foreach ($eventos as $evento) {
     }
 }
 
-// Caso não encontre o evento
 if (!$eventoSelecionado) {
-    echo "<div class='container mt-5'><div class='alert alert-danger'>Evento não encontrado.</div></div>";
+?>
+    <!DOCTYPE html>
+    <html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Evento não encontrado</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../style/style.css">
+    </head>
+
+    <body>
+        <?php include '../templates/header.php'; ?>
+        <div class="evento-erro-container">
+            <div class="evento-erro-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/4076/4076549.png" alt="Nenhum evento encontrado">
+                <h2>Evento não encontrado</h2>
+                <p>Não encontramos o evento que você procura.<br>
+                    Verifique se o código está correto ou veja a lista de eventos disponíveis.</p>
+                <a href="../public/listar.php" class="btn btn-primary">Ver todos os eventos</a>
+            </div>
+        </div>
+        <?php include '../templates/footer.php'; ?>
+    </body>
+
+    </html>
+<?php
     exit;
 }
 ?>
