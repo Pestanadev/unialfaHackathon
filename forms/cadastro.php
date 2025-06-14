@@ -76,6 +76,19 @@
                 <label for="logradouro">Logradouro</label>
                 <input type="text" id="logradouro" name="logradouro" placeholder="Logradouro: " required>
 
+                <div class="termos-box">
+                    <label for="cidade">Termos de Responsabilidade</label>
+                    <div class="termos-texto" tabindex="0">
+                        Ao se inscrever neste Evento, você declara estar de acordo com o nosso Código de Conduta.<br>
+                        Declaro que li e aceito os Termos de Uso e a Política de Privacidade.
+                        Autorizo, de forma livre e informada, o uso dos meus dados pela Artmed e pelas empresas do grupo para o envio de comunicações sobre produtos, serviços e novidades. Estou ciente de que posso revogar esta autorização a qualquer momento.
+                    </div>
+                    <div class="termos-checkbox">
+                        <input type="checkbox" id="aceito-termos" name="aceito-termos" required>
+                        <label for="aceito-termos">Li e concordo com os termos acima</label>
+                    </div>
+                </div>
+
                 <button type="submit">Inscrever-se</button>
             </form>
         </div>
