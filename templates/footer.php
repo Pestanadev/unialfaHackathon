@@ -88,7 +88,18 @@
         </div>
         <div class="footer-section footer-contact">
             <h3>Contato</h3>
-            <p>Trabalhe Conosco </p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSewLEFpbI_806oeNfH8IK2q9OyxR8uIlmAOLkiPPaNj11NnCg/viewform?usp=dialog"
+                target="_blank"
+                rel="noopener"
+                class="organizar-evento-link">
+                Organizar Evento
+            </a>
+            <a href="https://wa.me/5544984367411?text=Ol%C3%A1!%20Preciso%20de%20suporte%20para%20organizar%20um%20evento."
+                target="_blank"
+                rel="noopener"
+                class="organizar-evento-link">
+                Contato de Suporte
+            </a>
         </div>
     </div>
 </footer>
