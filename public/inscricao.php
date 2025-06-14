@@ -16,7 +16,7 @@
     <div class="centralizado">
         <?php include '../templates/header.php'; ?>
 
-      
+      <?php include '../forms/cadastro.php'; ?>
 
         <?php include '../templates/footer.php'; ?>
     </div>
