@@ -1,6 +1,6 @@
 package uniAlfa.hackathon;
 
-import javax.swing.SwingUtilities;
+import javax.swing.*;
 
 import uniAlfa.hackathon.gui.EventoGui;
 import uniAlfa.hackathon.service.EventoService;

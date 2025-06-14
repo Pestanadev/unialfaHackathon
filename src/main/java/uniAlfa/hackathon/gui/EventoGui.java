@@ -1,7 +1,11 @@
 package uniAlfa.hackathon.gui;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -13,6 +17,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.event.ListSelectionEvent;
@@ -25,154 +30,115 @@ public class EventoGui extends JFrame implements GuiUtil {
 
     private final EventoService eventoService;
 
-
-    private JLabel jlCod;
-    private JTextField tfCod;
-
-    private JLabel jlNome;
-    private JTextField tfNome;
-
-    private JLabel jlValor;
-    private JTextField tfValor;
-
-    private JLabel jlUrlImg;
-    private JTextField tfUrlImg;
-
-    private JLabel jlEndereco;
-    private JTextField tfEndereco;
-
-    private JLabel jlDescricao;
-    private JTextField tfDescricao;
-
-    private JLabel jlPalestrante;
-    private JTextField tfPalestrante;
-
-    private JLabel jlOrganizacao;
-    private JTextField tfOrganizacao;
-
-    private JLabel jlPatrocinador;
-    private JTextField tfPatrocinador;
-
-    private JLabel jlModalidade;
-    private JTextField tfModalidade;
-
-    private JLabel jlData;
-    private JTextField tfData;
-
-    private JButton btConfirmacao;
-    private JButton btListar;
-    private JButton btDeletar;
-    private JButton btAtualizar;
-
+    private JTextField tfCod, tfNome, tfValor, tfUrlImg, tfEndereco, tfDescricao, tfPalestrante, tfOrganizacao, tfPatrocinador, tfModalidade, tfData;
+    private JButton btConfirmacao, btListar, btDeletar, btAtualizar, btLimpar, btGerarRelatorio;
     private JTable tabela;
+    private JLabel statusLabel;
 
-    public EventoGui(EventoService eventoService) {
+    public EventoGui(EventoService eventoService) { // Construtor da classe EventoGui que inicializa a interface gráfica
         this.eventoService = eventoService;
+        setTitle("Cadastro de Evento");
+        setLayout(new BorderLayout());
+        java.awt.Image icon = new javax.swing.ImageIcon(getClass().getResource("/icone.png")).getImage(); // Carrega o ícone da janela a partir do recurso "icone.png"
+        setIconImage(icon); // Define o ícone da janela
+        setSize(800, 600); // Define o tamanho da janela
+        setResizable(false); // Define que a janela não pode ser redimensionada
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
 
-        jlCod = new JLabel("Código:");
-        tfCod = new JTextField(15);
+        JTabbedPane tabbedPane = new JTabbedPane(); // Cria um painel de abas para organizar a interface gráfica
+        tabbedPane.addTab("Cadastro", montarPainelEntrada()); // Adiciona o painel de entrada de dados na primeira aba
+        tabbedPane.addTab("Eventos", montarPainelSaida()); // Adiciona o painel de saída (tabela de eventos) na segunda aba
 
-        jlNome = new JLabel("Nome:");
-        tfNome = new JTextField(15);
+        statusLabel = new JLabel(" "); // Cria um rótulo para exibir mensagens de status
+        statusLabel.setForeground(Color.BLUE); // Define a cor do texto do rótulo de status como azul
+        statusLabel.setHorizontalAlignment(JLabel.CENTER); // Centraliza o texto do rótulo de status
+        statusLabel.setOpaque(true); // Permite que o rótulo tenha um fundo colorido
+        statusLabel.setBackground(Color.LIGHT_GRAY); // Define o fundo do rótulo de status como cinza claro
+        statusLabel.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5)); // Adiciona uma margem ao redor do rótulo de status
+        statusLabel.setPreferredSize(new java.awt.Dimension(0, 30)); // Define uma altura preferencial para o rótulo de status
+        statusLabel.setText("Bem-vindo ao sistema de cadastro de eventos!"); // Mensagem inicial no rótulo de status
+        statusLabel.setFont(statusLabel.getFont().deriveFont(14f)); // Define o tamanho da fonte do rótulo de status
 
-        jlValor = new JLabel("Valor:");
-        tfValor = new JTextField(15);
 
-        jlUrlImg = new JLabel("Url da Imagem:");
-        tfUrlImg = new JTextField(15);
+        getContentPane().setLayout(new BorderLayout());
+        getContentPane().add(tabbedPane, BorderLayout.CENTER); // Adiciona o painel de abas ao centro da janela
+        getContentPane().add(statusLabel, BorderLayout.SOUTH); // Adiciona o rótulo de status na parte inferior da janela
+    }
 
-        jlEndereco = new JLabel("Endereço:");
-        tfEndereco = new JTextField(15);
+    private JPanel montarPainelEntrada() { // Método para montar o painel de entrada de dados
+        JPanel panel = new JPanel(new GridBagLayout()); // Usa GridBagLayout para organizar os componentes
+        GridBagConstraints gbc = new GridBagConstraints(); // Cria um objeto GridBagConstraints para definir as restrições de layout
+        gbc.insets = new Insets(4, 4, 4, 4); // Define o espaçamento entre os componentes
+        gbc.fill = GridBagConstraints.HORIZONTAL; // Preenche o espaço horizontalmente
 
-        jlDescricao = new JLabel("Descrição:");
-        tfDescricao = new JTextField(15);
+        String[] labels = { "Código:", "Nome*:", "Valor:", "Url da Imagem:", "Endereço*:", "Descrição:", "Palestrante:",
+                "Organização:", "Patrocinador:", "Modalidade:", "Data* (dd/MM/yyyy):" };
+        JTextField[] fields = {
+                tfCod = new JTextField(15),
+                tfNome = new JTextField(15),
+                tfValor = new JTextField(15),
+                tfUrlImg = new JTextField(15),
+                tfEndereco = new JTextField(15),
+                tfDescricao = new JTextField(15),
+                tfPalestrante = new JTextField(15),
+                tfOrganizacao = new JTextField(15),
+                tfPatrocinador = new JTextField(15),
+                tfModalidade = new JTextField(15),
+                tfData = new JTextField(15)
+        };
 
-        jlPalestrante = new JLabel("Palestrante:");
-        tfPalestrante = new JTextField(15);
+        for (int i = 0; i < labels.length; i++) { // Loop para adicionar os rótulos e campos de texto
+            gbc.gridx = 0;
+            gbc.gridy = i; // Define a posição do rótulo
+            panel.add(new JLabel(labels[i]), gbc); // Adiciona o rótulo ao painel
+            gbc.gridx = 1; // Move para a coluna seguinte
+            panel.add(fields[i], gbc); // Adiciona o campo de texto ao painel
+        }
 
-        jlOrganizacao = new JLabel("Organização:");
-        tfOrganizacao = new JTextField(15);
-
-        jlPatrocinador = new JLabel("Patrocinador:");
-        tfPatrocinador = new JTextField(15);
-
-        jlModalidade = new JLabel("Modalidade:");
-        tfModalidade = new JTextField(15);
-
-        jlData = new JLabel("Data:");
-        tfData = new JTextField(15);
-
+        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 0));
         btConfirmacao = new JButton("Salvar");
         btConfirmacao.addActionListener(this::salvarEvento);
-
-        btListar = new JButton("Listar");
-        btListar.addActionListener(this::listarEventos);
-
-        btDeletar = new JButton("Deletar");
-        btDeletar.addActionListener(this::deletarEvento);
-
         btAtualizar = new JButton("Atualizar");
         btAtualizar.addActionListener(this::atualizarEvento);
+        btDeletar = new JButton("Deletar");
+        btDeletar.addActionListener(this::deletarEvento);
+        btListar = new JButton("Listar");
+        btListar.addActionListener(this::listarEventos);
+        btLimpar = new JButton("Limpar");
+        btLimpar.addActionListener(e -> limparCampos());
+        btGerarRelatorio = new JButton("Gerar Relatório");
+        btGerarRelatorio.addActionListener(this::gerarRelatorio);
 
-        setTitle("Cadastro de Evento");
-        setSize(600, 600);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        buttonPanel.add(btConfirmacao);
+        buttonPanel.add(btAtualizar);
+        buttonPanel.add(btDeletar);
+        buttonPanel.add(btListar);
+        buttonPanel.add(btLimpar);
+        buttonPanel.add(btGerarRelatorio);
+        
+        gbc.gridx = 0; // Define a posição do painel de botões
+        gbc.gridy = labels.length; // Coloca o painel de botões abaixo dos campos de entrada
+        gbc.gridwidth = 2; // O painel de botões ocupa duas colunas
+        panel.add(buttonPanel, gbc); // Adiciona o painel de botões ao painel principal
 
-        getContentPane().add(montarPainelEntrada(), BorderLayout.NORTH);
-        getContentPane().add(montarPainelSaida(), BorderLayout.CENTER);
-
-        setLocationRelativeTo(null);
+        return panel;
     }
 
-    private JPanel montarPainelEntrada() {
-        var jPanel = new JPanel(new GridBagLayout());
-
-        jPanel.add(jlCod, montarGrid(0, 0));
-        jPanel.add(tfCod, montarGrid(1, 0));
-        jPanel.add(jlNome, montarGrid(0, 1));
-        jPanel.add(tfNome, montarGrid(1, 1));
-        jPanel.add(jlValor, montarGrid(0, 2));
-        jPanel.add(tfValor, montarGrid(1, 2));
-        jPanel.add(jlUrlImg, montarGrid(0, 3));
-        jPanel.add(tfUrlImg, montarGrid(1, 3));
-        jPanel.add(jlEndereco, montarGrid(0, 4));
-        jPanel.add(tfEndereco, montarGrid(1, 4));
-        jPanel.add(jlDescricao, montarGrid(0, 5));
-        jPanel.add(tfDescricao, montarGrid(1, 5));
-        jPanel.add(jlPalestrante, montarGrid(0, 6));
-        jPanel.add(tfPalestrante, montarGrid(1, 6));
-        jPanel.add(jlOrganizacao, montarGrid(0, 7));
-        jPanel.add(tfOrganizacao, montarGrid(1, 7));
-        jPanel.add(jlPatrocinador, montarGrid(0, 8));
-        jPanel.add(tfPatrocinador, montarGrid(1, 8));
-        jPanel.add(jlModalidade, montarGrid(0, 9));
-        jPanel.add(tfModalidade, montarGrid(1, 9));
-        jPanel.add(jlData, montarGrid(0, 10));
-        jPanel.add(tfData, montarGrid(1, 10));
-        jPanel.add(btConfirmacao, montarGrid(0, 11));
-        jPanel.add(btListar, montarGrid(1, 11));
-        jPanel.add(btDeletar, montarGrid(0, 12));
-        jPanel.add(btAtualizar, montarGrid(1, 12));
-
-        return jPanel;
-    }
-
-    private JPanel montarPainelSaida() {
-        var jPanel = new JPanel(new BorderLayout());
-
+    private JPanel montarPainelSaida() { // Método para montar o painel de saída que exibe a tabela de eventos
+        JPanel panel = new JPanel(new BorderLayout());
         tabela = new JTable();
         tabela.setDefaultEditor(Object.class, null);
         tabela.getTableHeader().setReorderingAllowed(false);
         tabela.setModel(carregarEventos());
         tabela.getSelectionModel().addListSelectionListener(this::selecionarEvento);
 
-        var scrollPanel = new JScrollPane(tabela);
-        jPanel.add(scrollPanel, BorderLayout.CENTER);
-
-        return jPanel;
+        JScrollPane scrollPanel = new JScrollPane(tabela);
+        panel.add(scrollPanel, BorderLayout.CENTER);
+        return panel;
     }
 
-    private void selecionarEvento(ListSelectionEvent ignored) {
+    private void selecionarEvento(ListSelectionEvent ignored) { // Método para selecionar um evento na tabela e
         int selectedRow = tabela.getSelectedRow();
         if (selectedRow != -1) {
             tfCod.setText(tabela.getValueAt(selectedRow, 0).toString());
@@ -189,7 +155,7 @@ public class EventoGui extends JFrame implements GuiUtil {
         }
     }
 
-    private DefaultTableModel carregarEventos() {
+    private DefaultTableModel carregarEventos() { // Método para carregar os eventos do banco de dados e exibi-los na tabela
         var model = new DefaultTableModel();
         model.addColumn("Codigo");
         model.addColumn("Nome");
@@ -203,8 +169,9 @@ public class EventoGui extends JFrame implements GuiUtil {
         model.addColumn("Modalidade");
         model.addColumn("Data");
 
-        eventoService.listarBD().forEach(evento -> {
-            model.addRow(new Object[]{
+        eventoService.listarBD().forEach(evento -> { // Itera sobre a lista de eventos e adiciona cada um ao modelo da
+                                                     // tabela
+            model.addRow(new Object[] { // Cria uma nova linha com os dados do evento
                     evento.getCod(),
                     evento.getNome(),
                     evento.getValor(),
@@ -222,12 +189,14 @@ public class EventoGui extends JFrame implements GuiUtil {
         return model;
     }
 
-    private void listarEventos(ActionEvent event) {
-        JOptionPane.showMessageDialog(this, eventoService.listar());
+    private void listarEventos(ActionEvent event) { // Método para listar todos os eventos cadastrados
+        JOptionPane.showMessageDialog(this, eventoService.listar()); // Exibe uma mensagem com a lista de eventos
     }
 
-    private void salvarEvento(ActionEvent event) {
-        try {
+    private void salvarEvento(ActionEvent event) { // Método para salvar um novo evento
+        if (!validarCamposObrigatorios())
+            return; // Verifica se os campos obrigatórios estão preenchidos
+        try { // Tenta converter o código do evento para Long e a data para o formato correto
             Long cod = tfCod.getText().isBlank() ? 0L : Long.parseLong(tfCod.getText());
             Date dataFormatada = new SimpleDateFormat("dd/MM/yyyy").parse(tfData.getText());
 
@@ -242,19 +211,30 @@ public class EventoGui extends JFrame implements GuiUtil {
                     tfOrganizacao.getText(),
                     tfPatrocinador.getText(),
                     tfModalidade.getText(),
-                    dataFormatada
-            );
+                    dataFormatada);
 
-            eventoService.salvarBD(evento);
-            limparCampos();
-            JOptionPane.showMessageDialog(this, "Sucesso!");
-            tabela.setModel(carregarEventos());
-        } catch (ParseException e) {
-            JOptionPane.showMessageDialog(this, "Data inválida. Use o formato dd/MM/yyyy");
+            eventoService.salvarBD(evento); // Salva o evento no banco de dados
+            limparCampos(); // Limpa os campos de entrada
+            statusLabel.setText("Evento salvo com sucesso!"); // Exibe uma mensagem de sucesso
+            tabela.setModel(carregarEventos()); // Atualiza a tabela com os eventos cadastrados
+        } catch (ParseException e) { // Captura exceção de formatação de data
+            statusLabel.setText("Data inválida. Use o formato dd/MM/yyyy"); // Exibe mensagem de erro
         }
     }
 
-    private void limparCampos() {
+    private boolean validarCamposObrigatorios() { // Método para validar os campos obrigatórios antes de salvar ou atualizar um evento
+        if (tfNome.getText().isBlank() || tfEndereco.getText().isBlank() || tfData.getText().isBlank()) {
+            statusLabel.setText("Preencha os campos obrigatórios (*).");
+            return false;
+        }
+        // Se o campo Valor for vazio ou igual a "0", define como "Gratuito"
+        if (tfValor.getText().isBlank() || tfValor.getText().trim().equals("0")) {
+            tfValor.setText("Gratuito");
+        }
+        return true;
+    }
+
+    private void limparCampos() { // Método para limpar todos os campos de entrada
         tfCod.setText("");
         tfNome.setText("");
         tfValor.setText("");
@@ -266,36 +246,40 @@ public class EventoGui extends JFrame implements GuiUtil {
         tfPatrocinador.setText("");
         tfModalidade.setText("");
         tfData.setText("");
+        statusLabel.setText(" Campos limpos. Pronto para novo cadastro.");
     }
 
-    private void deletarEvento(ActionEvent event) {
+    private void deletarEvento(ActionEvent event) { // Método para deletar um evento selecionado
         try {
             Long cod = tfCod.getText().isBlank() ? null : Long.parseLong(tfCod.getText());
             if (cod == null) {
-                JOptionPane.showMessageDialog(this, "Selecione um evento para deletar.");
+                statusLabel.setText("Selecione um evento para deletar.");
                 return;
             }
-            int confirm = JOptionPane.showConfirmDialog(this, "Deseja realmente deletar este evento?", "Confirmação", JOptionPane.YES_NO_OPTION);
+            int confirm = JOptionPane.showConfirmDialog(this, "Deseja realmente deletar este evento?", "Confirmação",
+                    JOptionPane.YES_NO_OPTION);
             if (confirm == JOptionPane.YES_OPTION) {
                 boolean sucesso = eventoService.deletarBD(cod);
                 if (sucesso) {
-                    JOptionPane.showMessageDialog(this, "Evento deletado com sucesso!");
+                    statusLabel.setText("Evento deletado com sucesso!");
                     limparCampos();
                     tabela.setModel(carregarEventos());
                 } else {
-                    JOptionPane.showMessageDialog(this, "Erro ao deletar evento.");
+                    statusLabel.setText("Erro ao deletar evento.");
                 }
             }
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Código inválido.");
+            statusLabel.setText("Código inválido.");
         }
     }
 
-    private void atualizarEvento(ActionEvent event) {
+    private void atualizarEvento(ActionEvent event) { // Método para atualizar um evento existente
+        if (!validarCamposObrigatorios())
+            return;
         try {
             Long cod = tfCod.getText().isBlank() ? null : Long.parseLong(tfCod.getText());
             if (cod == null) {
-                JOptionPane.showMessageDialog(this, "Selecione um evento para atualizar.");
+                statusLabel.setText("Selecione um evento para atualizar.");
                 return;
             }
             Date dataFormatada = new SimpleDateFormat("dd/MM/yyyy").parse(tfData.getText());
@@ -311,35 +295,33 @@ public class EventoGui extends JFrame implements GuiUtil {
                     tfOrganizacao.getText(),
                     tfPatrocinador.getText(),
                     tfModalidade.getText(),
-                    dataFormatada
-            );
+                    dataFormatada);
 
-            // Supondo que o EventoDao.jar fornece um método atualizarEvento(Evento evento)
-            boolean sucesso = false;
-            try {
-                // Exemplo: EventoDao dao = new EventoDao();
-                // sucesso = dao.atualizarEvento(evento);
-                sucesso = eventoService.atualizar(evento); // Mantenha se o service já usa o DAO do jar
-            } catch (Exception ex) {
-                JOptionPane.showMessageDialog(this, "Erro ao acessar o banco de dados: " + ex.getMessage());
-                return;
-            }
-
+            boolean sucesso = eventoService.atualizar(evento);
             if (sucesso) {
-                JOptionPane.showMessageDialog(this, "Evento atualizado com sucesso!");
                 limparCampos();
+                statusLabel.setText("Evento atualizado com sucesso!");
                 tabela.setModel(carregarEventos());
             } else {
-                JOptionPane.showMessageDialog(this, "Erro ao atualizar evento.");
+                statusLabel.setText("Erro ao atualizar evento.");
             }
         } catch (ParseException e) {
-            JOptionPane.showMessageDialog(this, "Data inválida. Use o formato dd/MM/yyyy");
+            statusLabel.setText("Data inválida. Use o formato dd/MM/yyyy");
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Código inválido.");
+            statusLabel.setText("Código inválido.");
         }
     }
 
     private String formatarData(Date data) {
         return new SimpleDateFormat("dd/MM/yyyy").format(data);
     }
+
+    private void gerarRelatorio(ActionEvent event) {
+    eventoService.gerarRelatorioEventos();
+    statusLabel.setText("Relatório de eventos gerado com sucesso!");
+    JOptionPane.showMessageDialog(this, "Relatório gerado com sucesso em:\n" 
+        + System.getProperty("user.dir") + java.io.File.separator + "relatorio_eventos.txt");
 }
+}
+
+

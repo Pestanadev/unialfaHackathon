@@ -10,7 +10,7 @@ import uniAlfa.hackathon.model.Evento;
 public class EventoDao extends Dao implements DaoInterface {
 
     @Override
-    public boolean salvar(Object entity) {
+    public boolean salvar(Object entity) { // Método para salvar um evento no banco de dados
         try {
             var evento = (Evento) entity;
 
@@ -40,7 +40,7 @@ public class EventoDao extends Dao implements DaoInterface {
     }
 
     @Override
-    public boolean atualizar(Object entity) {
+    public boolean atualizar(Object entity) { // Método para atualizar um evento no banco de dados
         try {
             var evento = (Evento) entity;
 
@@ -71,7 +71,7 @@ public class EventoDao extends Dao implements DaoInterface {
     }
 
     @Override
-    public List<Object> listar() {
+    public List<Object> listar() { // Método para listar todos os eventos do banco de dados
         List<Object> eventos = new ArrayList<>();
 
         try {
@@ -106,7 +106,7 @@ public class EventoDao extends Dao implements DaoInterface {
     }
 
     @Override
-    public Object buscarPorId(Long id) {
+    public Object buscarPorId(Long id) { // Método para buscar um evento pelo ID no banco de dados
         try {
             String sql = "SELECT * FROM evento WHERE cod = ?";
             PreparedStatement ps = getConnection().prepareStatement(sql);
@@ -140,7 +140,7 @@ public class EventoDao extends Dao implements DaoInterface {
     }
 
     @Override
-    public boolean deletar(Long id) {
+    public boolean deletar(Long id) { // Método para deletar um evento pelo ID no banco de dados
         try {
             String sql = "DELETE FROM evento WHERE cod = ?";
             PreparedStatement ps = getConnection().prepareStatement(sql);

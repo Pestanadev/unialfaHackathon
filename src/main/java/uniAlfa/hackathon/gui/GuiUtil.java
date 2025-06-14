@@ -9,7 +9,7 @@ public interface GuiUtil {
      * @param linha  a linha onde o componente será posicionado
      * @return um objeto GridBagConstraints configurado
      */
-    default java.awt.GridBagConstraints montarGrid(int coluna, int linha) {
+    default java.awt.GridBagConstraints montarGrid(int coluna, int linha) { 
         var constraints = new java.awt.GridBagConstraints();
         constraints.insets = new java.awt.Insets(5, 5, 5, 5);
         constraints.gridx = coluna;
