@@ -24,12 +24,12 @@ $eventos = $api->getEventos();
         <?php include '../templates/header.php'; ?>
 
         <div class="row g-4">
-            <?php foreach($eventos as $eventos): ?>
+            <?php foreach ($eventos as $eventos): ?>
                 <div class="col-md-4">
                     <div class="card h-100">
                         <img src="<?= htmlspecialchars($eventos['urlImg']) ?>" class="card-img-top" alt="Foto do evento">
                         <div class="card-body">
-             <h5 class="card-title"><?= htmlspecialchars($eventos['nome']) ?></h5>
+                            <h5 class="card-title"><?= htmlspecialchars($eventos['nome']) ?></h5>
                             <p class="card-text"><strong>descrição:</strong> <?= htmlspecialchars($eventos['descricao']) ?></p>
                         </div>
                         <div class="card-footer text-center">

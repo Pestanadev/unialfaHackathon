@@ -3,67 +3,12 @@ body {
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #b0b0b0;
-    height: 100vh;
-}
-
-.login-container {
-    display: flex;
     min-height: 100vh;
-}
-
-.login-left {
-    flex: 1;
-    background: #011627;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 32px 24px;
-}
-
-.form-area {
-    background: transparent;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 340px;
-    gap: 14px;
-}
-
-.form-area label {
-    font-size: 1rem;
-}
-
-.form-area input {
-    padding: 8px;
-    border: none;
-    border-radius: 4px;
-    margin-bottom: 6px;
-    font-size: 1rem;
-}
-
-.form-area button {
-    background-color: #0e76a8;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 12px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 8px;
-    transition: background 0.5s;
-}
-
-.form-area button:hover {
-    background: #41EAD4;
-    color: #011627;
-    transition: 0.5s;
 }
 
 header {
     background-color: transparent;
-    box-shadow: 0 1px 4px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 1px 4px rgba(255, 255, 255, 0.08);
     position: fixed;
     width: 100%;
     top: 0;
@@ -73,10 +18,8 @@ header {
 
 .container-fluid {
     max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    margin: auto;
+    padding: 0 15px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -124,10 +67,10 @@ header {
     left: 0;
     width: 100vw;
     height: 360px;
-    background: url('../style/img/banner1.png') center center/cover no-repeat;
     filter: blur(6px) brightness(0.85);
     z-index: 0;
     pointer-events: none;
+    transition: background-image 0.7s;
 }
 
 @media (max-width: 600px) {
@@ -157,15 +100,16 @@ header {
 
 .evento-box-white {
     background: #fff;
-    border-radius: 12px;
+    border-radius: 14px;
     box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.10);
-    padding: 20px 24px 16px 24px;
-    max-width: 500px;
+    padding: 24px 30px 18px 30px;
+    max-width: 540px;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-bottom: 22px;
+    margin-bottom: 24px;
+    border: 1.5px solid #e7e7e7;
 }
 
 .evento-info {
@@ -173,30 +117,38 @@ header {
     width: 100%;
     text-align: left;
     padding: 0;
-    font-size: 1.08rem;
+    font-size: 1.1rem;
+    letter-spacing: 0.01em;
 }
 
 .evento-info h1 {
     margin-top: 3px;
-    font-size: 1.4rem;
-    margin-bottom: 8px;
-    color: #011627;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #0e76a8;
+    font-weight: 700;
+    text-shadow: 0 2px 8px rgba(65, 234, 212, 0.08);
 }
 
 .evento-detalhes {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
-    margin-bottom: 12px;
+    gap: 18px;
+    margin-bottom: 15px;
+    justify-content: flex-start;
 }
 
 .evento-det {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 7px;
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 1.07rem;
     color: #222;
+    background: #eaf8fa;
+    padding: 5px 12px;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px 0 rgba(65, 234, 212, 0.07);
 }
 
 .evento-icon {
@@ -207,35 +159,43 @@ header {
 
 .evento-info p {
     margin: 8px 0 0 0;
-    font-size: 1rem;
+    font-size: 1.03rem;
     color: #444;
+    font-weight: 400;
+    text-align: left;
 }
 
 @media (max-width: 600px) {
     .evento-box-white {
         padding: 15px 6px 10px 6px;
-        max-width: 100vw;
+        max-width: 99vw;
+        border-radius: 9px;
     }
 
     .evento-info h1 {
-        font-size: 1.1rem;
+        font-size: 1.13rem;
     }
 
     .evento-info p {
         font-size: 0.98rem;
     }
+
+    .evento-detalhes {
+        gap: 8px;
+    }
 }
 
 .form-box-white {
     background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 24px 15px rgba(0, 0, 0, 0.10);
+    border-radius: 14px;
+    box-shadow: 0 4px 24px 15px rgba(0, 0, 0, 0.08);
     padding: 32px 24px 24px 24px;
-    max-width: 450px;
+    max-width: 430px;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 1.5px solid #e7e7e7;
 }
 
 .form-area {
@@ -244,24 +204,55 @@ header {
     width: 100%;
     max-width: 350px;
     gap: 14px;
+    display: flex;
+    flex-direction: column;
 }
 
 .form-area label {
     font-weight: 600;
     color: #011627;
     margin-top: 2px;
+    margin-bottom: 3px;
+    font-size: 1.04rem;
+    letter-spacing: 0.02em;
 }
 
 .form-area input {
-    border: 1px solid #ccc;
-    background: #fff;
+    padding: 9px;
+    border: 1.3px solid #b7b7b7;
+    border-radius: 5px;
+    background: #f6f8fa;
     color: #011627;
-    transition: border 0.2s;
+    font-size: 1.07rem;
+    margin-bottom: 6px;
+    transition: border 0.2s, box-shadow 0.2s;
+    outline: none;
 }
 
 .form-area input:focus {
-    border: 1.5px solid #41EAD4;
-    outline: none;
+    border: 1.7px solid #41EAD4;
+    box-shadow: 0 0 4px 0 #41EAD4;
+    background: #fff;
+}
+
+.form-area button {
+    background-color: #0e76a8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 1.13rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 13px;
+    transition: background 0.3s, color 0.3s;
+    letter-spacing: 0.04em;
+    box-shadow: 0 2px 12px 0 rgba(14, 118, 168, 0.04);
+}
+
+.form-area button:hover {
+    background: #41EAD4;
+    color: #011627;
 }
 
 .logo-form {
@@ -269,15 +260,16 @@ header {
     width: 150px;
     max-width: 100%;
     height: auto;
-    margin: 0 auto 14px auto;
+    margin: 0 auto 13px auto;
     padding: 0;
 }
 
 .form-area h2 {
     color: #011627;
-    font-size: 1.5rem;
-    margin-bottom: 18px;
+    font-size: 1.48rem;
+    margin-bottom: 16px;
     margin-top: 0;
+    letter-spacing: 0.01em;
 }
 
 .termos-box {
@@ -287,13 +279,13 @@ header {
 
 .termos-texto {
     background: #f8f9fa;
-    border: 1px solid #c4c4c4;
+    border: 1.2px solid #c4c4c4;
     border-radius: 6px;
     padding: 14px 12px;
     max-height: 110px;
     min-height: 80px;
     overflow-y: auto;
-    font-size: 0.96rem;
+    font-size: 0.98rem;
     color: #222;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -319,11 +311,12 @@ header {
     }
 
     .form-box-white {
-        padding: 18px 6px 16px 6px;
-        max-width: 100vw;
+        padding: 14px 4px 10px 4px;
+        max-width: 99vw;
+        border-radius: 9px;
     }
 
     .form-area {
-        max-width: 95vw;
+        max-width: 97vw;
     }
 }

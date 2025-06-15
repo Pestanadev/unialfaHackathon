@@ -18,7 +18,6 @@
 
       <?php include '../forms/cadastro.php'; ?>
 
-        <?php include '../templates/footer.php'; ?>
     </div>
 </body>
 
