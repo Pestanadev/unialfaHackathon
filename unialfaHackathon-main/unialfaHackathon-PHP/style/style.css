@@ -1,0 +1,454 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #011627;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+.centralizado {
+  flex: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 8px 0;
+}
+
+header {
+  background-color: transparent;
+  box-shadow: 0 1px 4px rgba(255, 255, 255, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.container-fluid {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar {
+  padding-right: 8rem;
+  position: relative;
+  height: 75px;
+  min-height: 64px;
+}
+
+#logo {
+  height: 45px;
+  max-height: 48px;
+  width: auto;
+  padding-left: 15rem;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+  #logo {
+    position: static;
+    height: 45px;
+    max-height: 48px;
+    padding-left: 0;
+    margin-right: auto;
+    transform: none;
+    display: block;
+  }
+
+  .container-fluid {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+.top-banner {
+  display: block;
+  margin: 3px auto;
+  max-width: 100%;
+  width: 800px;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 15px;
+}
+
+.banner-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+}
+
+.top-banner {
+  display: block;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  margin: 0;
+}
+
+.banner-text {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  z-index: 2;
+  color: #fff;
+  max-width: 350px;
+  background: transparent;
+  padding: 16px 24px;
+  border-radius: 10px;
+  opacity: 0;
+  animation: fadeInText 1s ease-in-out 0.2s forwards;
+}
+
+.banner-title {
+  font-size: 2.3rem;
+  font-weight: bold;
+  margin-bottom: 0.7rem;
+  letter-spacing: 2px;
+}
+
+.banner-desc {
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+
+  .banner-container,
+  .top-banner {
+    max-width: 100%;
+  }
+
+  .banner-text {
+    max-width: 80vw;
+    left: 6%;
+    top: 6%;
+    padding: 10px 14px;
+  }
+
+  .banner-title {
+    font-size: 1.5rem;
+  }
+
+  .banner-desc {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .banner-text {
+    max-width: 95vw;
+    left: 2%;
+    top: 2%;
+    padding: 7px 8px;
+  }
+
+  .banner-title {
+    font-size: 1.15rem;
+  }
+
+  .banner-desc {
+    font-size: 0.98rem;
+  }
+}
+
+@keyframes fadeInText {
+  to {
+    opacity: 1;
+  }
+}
+
+.banner-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+}
+
+.top-banner {
+  display: block;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  margin: 0;
+  border-radius: 20px;
+}
+
+.banner-text {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  z-index: 2;
+  color: #fff;
+  max-width: 350px;
+  background: transparent;
+  padding: 16px 24px 24px 24px;
+  border-radius: 16px;
+  opacity: 0;
+  animation: fadeInText 1s ease-in-out 0.2s forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.btn-ver-eventos {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 28px;
+  background: #011627;
+  color: #ffffff;
+  font-size: 1.12rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(24, 24, 24, 0.07);
+  transition: background 0.5s, transform 0.15s;
+  cursor: pointer;
+}
+
+.btn-ver-eventos:hover,
+.btn-ver-eventos:focus {
+  background: #41EAD4;
+  transform: translateY(-2px) scale(1.03);
+  color: #000000;
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+
+  .banner-container,
+  .top-banner {
+    max-width: 100%;
+  }
+
+  .banner-text {
+    max-width: 80vw;
+    left: 6%;
+    top: 6%;
+    padding: 10px 14px 18px 14px;
+  }
+
+  .banner-title {
+    font-size: 1.5rem;
+  }
+
+  .banner-desc {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .banner-text {
+    max-width: 97vw;
+    left: 2%;
+    top: 2%;
+    padding: 7px 7px 15px 7px;
+  }
+
+  .banner-title {
+    font-size: 1.15rem;
+  }
+
+  .banner-desc {
+    font-size: 0.98rem;
+  }
+}
+
+.evento-erro-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  background: transparent;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+.evento-erro-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 6px 32px rgba(14, 118, 168, 0.09);
+  padding: 40px 28px 32px 28px;
+  text-align: center;
+  max-width: 400px;
+  margin: 32px auto;
+}
+
+.evento-erro-card img {
+  width: 76px;
+  margin-bottom: 18px;
+  opacity: 0.7;
+}
+
+.evento-erro-card h2 {
+  color: #0e76a8;
+  margin-bottom: 14px;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.evento-erro-card p {
+  font-size: 1.08rem;
+  color: #333;
+  margin-bottom: 22px;
+  line-height: 1.5;
+}
+
+.evento-erro-card .btn {
+  padding: 10px 32px;
+  font-weight: 600;
+  border-radius: 22px;
+  font-size: 1rem;
+  background: #0e76a8;
+  border: none;
+  transition: background 0.2s;
+}
+
+.evento-erro-card .btn:hover {
+  background: #41ead4;
+  color: #011627;
+}
+
+.footer {
+  background: #011627;
+  color: #fff;
+  padding: 25px 0 0 0;
+  font-size: 1rem;
+  margin-top: 4rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1050px;
+  margin: 0 auto;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.footer-section {
+  flex: 1 1 150px;
+  min-width: 220px;
+  margin-bottom: 40px;
+}
+
+.footer-about p {
+  margin-top: 10px;
+  padding-right: 15px;
+}
+
+.footer-team ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-team li {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.footer-team-name {
+  flex: 1 1 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.footer-team-icons {
+  display: flex;
+  gap: 6px;
+  padding-right: 20px;
+}
+
+.footer-team a {
+  color: #fff;
+  margin-left: 6px;
+  transition: color 0.2s;
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-team a:hover {
+  color: #0e76a8;
+}
+
+.footer-team a[title="GitHub"]:hover {
+  color: #c9d1d9;
+}
+
+.organizar-evento-link {
+  display: inline-block;
+  background: #0e76a8;
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 24px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 12px;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 8px rgba(14, 118, 168, 0.10);
+}
+
+.organizar-evento-link:hover,
+.organizar-evento-link:focus {
+  background: #41EAD4;
+  color: #011627;
+  box-shadow: 0 4px 18px rgba(65, 234, 212, 0.10);
+  text-decoration: none;
+}
+
+.footer-section:not(:last-child) {
+  border-right: 1.5px solid rgba(255, 255, 255, 0.11);
+}
+
+@media (max-width: 900px) {
+  .footer-section {
+    border: none !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 1rem;
+  }
+
+  .footer-section {
+    margin-bottom: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    font-size: 0.95rem;
+    padding: 32px 0 0 0;
+  }
+
+  .footer-section {
+    min-width: 0;
+  }
+}

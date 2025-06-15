@@ -1,0 +1,24 @@
+[
+    {
+        "codEvento": "1",
+        "nome": "Renan dos Santos Oliveira",
+        "email": "ro6680476@gmail.com",
+        "cep": "87538000",
+        "estado": "PR",
+        "cidade": "Perobal",
+        "bairro": "centro",
+        "logradouro": "br323",
+        "dataInscricao": "2025-06-15 03:40:12"
+    },
+    {
+        "codEvento": "2",
+        "nome": "Felipe Pestana",
+        "email": "impestanita@gmail.com",
+        "cep": "87511070",
+        "estado": "Paran\u00e1",
+        "cidade": "Umuarama",
+        "bairro": "Jardim Soluar",
+        "logradouro": "Rua Ant\u00f4nio Ramalho",
+        "dataInscricao": "2025-06-15 16:35:51"
+    }
+]
