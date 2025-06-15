@@ -15,11 +15,8 @@
 <body>
     <div class="centralizado">
         <?php include '../templates/header.php'; ?>
-
-<<<<<<< HEAD
-=======
-      <?php include '../forms/cadastro.php'; ?>
->>>>>>> origin/main
+        
+        <?php include '../forms/cadastro.php'; ?>
 
         <?php include '../templates/footer.php'; ?>
     </div>

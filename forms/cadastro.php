@@ -52,7 +52,7 @@
             </div>
         </div>
         <div class="form-box-white">
-            <form class="form-area" id="evento-form" method="POST" action="../public/evento_cadastro.php" autocomplete="off">
+            <form class="form-area" id="evento-form" method="POST" action="../public/MeusEventos.php" autocomplete="off">
                 <img src="../style/img//logo.png" alt="logo" class="logo-form">
                 <h2>Inscreva-se no Evento</h2>
                 <label for="nome">Nome</label>
