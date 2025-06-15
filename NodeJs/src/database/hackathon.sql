@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2025 at 12:38 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
+-- Tempo de geração: 14/06/2025 às 20:59
+-- Versão do servidor: 10.4.32-MariaDB
+-- Versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `hackathon`
+-- Banco de dados: `hackathon`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `evento`
+-- Estrutura para tabela `evento`
 --
 
 CREATE TABLE `evento` (
@@ -42,32 +42,39 @@ CREATE TABLE `evento` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `evento`
+-- Despejando dados para a tabela `evento`
 --
 
 INSERT INTO `evento` (`cod`, `nome`, `valor`, `urlImg`, `endereco`, `descricao`, `palestrante`, `organizacao`, `patrocinador`, `modalidade`, `data`) VALUES
-(1, 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', '2004-06-01'),
-(2, 'Aprenda php', '0', 'https://imgur.com/NbSllCb.png', 'UniAlfa', 'Curso de Sistemas', 'Guanabara', 'e-code', 'redbull', 'Desenvolvimento', '2004-06-01');
+(1, 'Vestibular de Inverno', 'Gratuito', 'https://imgur.com/a/vC5Nl2E.png', 'Av Paraná 7327, Umuarama, PR, 87502-000 ', 'O Vestibular de Inverno da UniALFA está com inscrições abertas, e essa pode ser a oportunidade que vai dar o start na sua trajetória acadêmica. Aqui na instituição, você conta com um ensino de qualidade, infraestrutura moderna e um corpo docente altamente qualificado, comprometido com o seu desenvolvimento pessoal e profissional.', 'Fernando', 'UniAlfa', 'ecodedigital', 'Concurso', '2025-07-11'),
+(2, 'Vestibular de Inverno', 'Gratuito', 'https://imgur.com/a/vC5Nl2E.png', 'Av Paraná 7327, Umuarama, PR, 87502-000 ', 'O Vestibular de Inverno da UniALFA está com inscrições abertas, e essa pode ser a oportunidade que vai dar o start na sua trajetória acadêmica. Aqui na instituição, você conta com um ensino de qualidade, infraestrutura moderna e um corpo docente altamente qualificado, comprometido com o seu desenvolvimento pessoal e profissional.', 'Fernando', 'UniAlfa', 'ecodedigital', 'Concurso', '2025-07-11'),
+(3, 'Vestibular de Inverno', 'Gratuito', 'https://imgur.com/a/vC5Nl2E.png', 'Av Paraná 7327, Umuarama, PR, 87502-000 ', 'O Vestibular de Inverno da UniALFA está com inscrições abertas, e essa pode ser a oportunidade que vai dar o start na sua trajetória acadêmica. Aqui na instituição, você conta com um ensino de qualidade, infraestrutura moderna e um corpo docente altamente qualificado, comprometido com o seu desenvolvimento pessoal e profissional.', 'Fernando', 'UniAlfa', 'ecodedigital', 'Concurso', '2025-07-11'),
+(4, 'Vestibular de Inverno', 'Gratuito', 'https://imgur.com/a/vC5Nl2E.png', 'Av Paraná 7327, Umuarama, PR, 87502-000 ', 'O Vestibular de Inverno da UniALFA está com inscrições abertas, e essa pode ser a oportunidade que vai dar o start na sua trajetória acadêmica. Aqui na instituição, você conta com um ensino de qualidade, infraestrutura moderna e um corpo docente altamente qualificado, comprometido com o seu desenvolvimento pessoal e profissional.', 'Fernando', 'UniAlfa', 'ecodedigital', 'Concurso', '2025-07-11'),
+(5, 'Vestibular de Inverno', 'Gratuito', 'https://imgur.com/a/vC5Nl2E.png', 'Av Paraná 7327, Umuarama, PR, 87502-000 ', 'O Vestibular de Inverno da UniALFA está com inscrições abertas, e essa pode ser a oportunidade que vai dar o start na sua trajetória acadêmica. Aqui na instituição, você conta com um ensino de qualidade, infraestrutura moderna e um corpo docente altamente qualificado, comprometido com o seu desenvolvimento pessoal e profissional.', 'Fernando', 'UniAlfa', 'ecodedigital', 'Concurso', '2025-07-11'),
+(6, 'Vestibular de Inverno', 'Gratuito', 'https://imgur.com/a/vC5Nl2E.png', 'Av Paraná 7327, Umuarama, PR, 87502-000 ', 'O Vestibular de Inverno da UniALFA está com inscrições abertas, e essa pode ser a oportunidade que vai dar o start na sua trajetória acadêmica. Aqui na instituição, você conta com um ensino de qualidade, infraestrutura moderna e um corpo docente altamente qualificado, comprometido com o seu desenvolvimento pessoal e profissional.', 'Fernando', 'UniAlfa', 'ecodedigital', 'Concurso', '2025-07-11'),
+(7, 'Vestibular de Inverno', 'Gratuito', 'https://imgur.com/a/vC5Nl2E.png', 'Av Paraná 7327, Umuarama, PR, 87502-000 ', 'O Vestibular de Inverno da UniALFA está com inscrições abertas, e essa pode ser a oportunidade que vai dar o start na sua trajetória acadêmica. Aqui na instituição, você conta com um ensino de qualidade, infraestrutura moderna e um corpo docente altamente qualificado, comprometido com o seu desenvolvimento pessoal e profissional.', 'Fernando', 'UniAlfa', 'ecodedigital', 'Concurso', '2025-07-11'),
+(8, 'Vestibular de Inverno', 'Gratuito', 'https://imgur.com/a/vC5Nl2E.png', 'Av Paraná 7327, Umuarama, PR, 87502-000 ', 'O Vestibular de Inverno da UniALFA está com inscrições abertas, e essa pode ser a oportunidade que vai dar o start na sua trajetória acadêmica. Aqui na instituição, você conta com um ensino de qualidade, infraestrutura moderna e um corpo docente altamente qualificado, comprometido com o seu desenvolvimento pessoal e profissional.', 'Fernando', 'UniAlfa', 'ecodedigital', 'Concurso', '2025-07-11'),
+(9, 'Vestibular de Inverno', 'Gratuito', 'https://imgur.com/a/vC5Nl2E.png', 'Av Paraná 7327, Umuarama, PR, 87502-000 ', 'O Vestibular de Inverno da UniALFA está com inscrições abertas, e essa pode ser a oportunidade que vai dar o start na sua trajetória acadêmica. Aqui na instituição, você conta com um ensino de qualidade, infraestrutura moderna e um corpo docente altamente qualificado, comprometido com o seu desenvolvimento pessoal e profissional.', 'Fernando', 'UniAlfa', 'ecodedigital', 'Concurso', '2025-07-11'),
+(10, 'Vestibular de Inverno', 'Gratuito', 'https://imgur.com/a/vC5Nl2E.png', 'Av Paraná 7327, Umuarama, PR, 87502-000 ', 'O Vestibular de Inverno da UniALFA está com inscrições abertas, e essa pode ser a oportunidade que vai dar o start na sua trajetória acadêmica. Aqui na instituição, você conta com um ensino de qualidade, infraestrutura moderna e um corpo docente altamente qualificado, comprometido com o seu desenvolvimento pessoal e profissional.', 'Fernando', 'UniAlfa', 'ecodedigital', 'Concurso', '2025-07-11');
+--
+-- Índices para tabelas despejadas
+--
 
 --
--- Indexes for dumped tables
---
-
---
--- Indexes for table `evento`
+-- Índices de tabela `evento`
 --
 ALTER TABLE `evento`
   ADD PRIMARY KEY (`cod`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT para tabelas despejadas
 --
 
 --
--- AUTO_INCREMENT for table `evento`
+-- AUTO_INCREMENT de tabela `evento`
 --
 ALTER TABLE `evento`
-  MODIFY `cod` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `cod` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
