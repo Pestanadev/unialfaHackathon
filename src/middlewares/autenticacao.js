@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import { verify } from "jsonwebtoken";
 import 'dotenv/config';
 
-function autenticacao(req: Request, res: Response, next: NextFunction) {
+function autenticacao(req, res, next) {
     const authHeader = req.headers.authorization;
 
     if (!authHeader) {
@@ -13,10 +13,9 @@ function autenticacao(req: Request, res: Response, next: NextFunction) {
     const [, token] = authHeader.split(" ");
 
     try {
-        const decoded = verify(token, process.env.TOKEN_SECRET!);
+        const decoded = verify(token, process.env.TOKEN_SECRET)
 
-        next();
-        return;
+         return next();
     }
     catch (error) {
         res.status(401).json({ message: "Token inválido" });

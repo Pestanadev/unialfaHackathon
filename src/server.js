@@ -19,8 +19,7 @@ const PORT = 3001
 app.use(routes)
 
 
-app.use ((
-error: Error, req: Request, res: Response, next: NextFunction) => {
+app.use ((error, req, res, next) => {
 
     // Verifica se o cabeçalho já foi enviado, se já foi não envia mais resposta, apenas passa o erro para ser tratado
 if (res.headersSent) {
