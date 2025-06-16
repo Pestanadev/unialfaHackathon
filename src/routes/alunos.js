@@ -1,8 +1,8 @@
-import { Router } from "express"
-import knex from "../database/knex";
+import { Router } from 'express'
+import knex  from '../database/knex/index.js';
+import autenticacao from "../middlewares/autenticacao.js";
 import { z } from "zod";
 import { hash } from "bcryptjs";
-import autenticacao from "../middlewares/autenticacao";
 
 const router = Router();
 
@@ -69,7 +69,7 @@ router.post("/cadastrar", async (req, res) => {
 })
 
 // Rota para editar um aluno específico pelo ID
-router.put("/editar/:id",autenticacao ,async (req, res) => {
+router.put("/editar",autenticacao ,async (req, res) => {
 
   const updateAlunoSchema = z.object({
     nome: z.string(),
@@ -78,7 +78,7 @@ router.put("/editar/:id",autenticacao ,async (req, res) => {
     telefone: z.string()
   })
 
-  const { id } = req.params;
+  const { id } = req.user.id;
   const aluno = await knex('alunos').where({ id }).first();
 
   updateAlunoSchema.parse(req.body);

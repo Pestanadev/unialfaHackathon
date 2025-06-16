@@ -1,6 +1,9 @@
-import { Request, Response, NextFunction } from "express";
-import { verify } from "jsonwebtoken";
+import express from "express";
+import  jwt from "jsonwebtoken";
 import 'dotenv/config';
+
+const { verify } = jwt;
+const {Request, Response, NextFunction} = express;
 
 function autenticacao(req, res, next) {
     const authHeader = req.headers.authorization;

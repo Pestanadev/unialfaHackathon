@@ -1,10 +1,11 @@
-import Router from 'express'
-import knex from '../database/knex'
+import { Router } from 'express'
+import knex  from '../database/knex/index.js';
 import { z } from 'zod';
 import { compare } from 'bcrypt';
-import { sign } from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 
 
+const { sign } = jwt;
 const router = Router();
 
 // Rota para login

@@ -1,7 +1,7 @@
-import { Router } from "express"
-import knex from "../database/knex";
+import { Router } from 'express'
+import knex  from '../database/knex/index.js';
+import autenticacao from "../middlewares/autenticacao.js";
 import { z } from "zod";
-import autenticacao from "../middlewares/autenticacao";
 
 const router = Router();
 
@@ -44,9 +44,10 @@ router.post("/:id", autenticacao, async (req, res) => {
 })
 
 router.get("/", async (req, res) => {
-    knex('inscricoes').then((inscricoes) => {
-        return res.json(inscricoes);
-    })   
+    const inscritos = await knex('evento').whereIn('id', function() {
+        this.select('evento_id').from('inscricoe').where('aluno_id', req.user.id)
+    })
+    
 })
 
 router.delete('/:id', autenticacao, async (req, res) => {
@@ -70,3 +71,5 @@ router.delete('/:id', autenticacao, async (req, res) => {
 
 
 })
+
+export default router;
