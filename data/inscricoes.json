@@ -31,5 +31,38 @@
         "bairro": "Moura Brasil",
         "logradouro": "Rua do Trilho",
         "dataInscricao": "2025-06-16 03:18:53"
+    },
+    {
+        "codEvento": "2",
+        "nome": "Gui",
+        "email": "teste@gmail.com",
+        "cep": "87511070",
+        "estado": "PR",
+        "cidade": "Umuarama",
+        "bairro": "Jardim Soluar",
+        "logradouro": "Rua Antonio Ramalho",
+        "dataInscricao": "2025-06-17 01:18:12"
+    },
+    {
+        "codEvento": "9",
+        "nome": "Gui",
+        "email": "teste@gmail.com",
+        "cep": "87511070",
+        "estado": "PR",
+        "cidade": "Umuarama",
+        "bairro": "Jardim Soluar",
+        "logradouro": "Rua Antonio Ramalho",
+        "dataInscricao": "2025-06-17 01:19:07"
+    },
+    {
+        "codEvento": "2",
+        "nome": "dsfsh",
+        "email": "ewert@gmail.com",
+        "cep": "87511070",
+        "estado": "PR",
+        "cidade": "Umuarama",
+        "bairro": "Jardim Soluar",
+        "logradouro": "Rua Antonio Ramalho",
+        "dataInscricao": "2025-06-17 01:20:06"
     }
 ]
