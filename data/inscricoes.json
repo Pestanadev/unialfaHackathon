@@ -9,5 +9,27 @@
         "bairro": "centro",
         "logradouro": "br323",
         "dataInscricao": "2025-06-15 03:40:12"
+    },
+    {
+        "codEvento": "2",
+        "nome": "gui",
+        "email": "Teste@gmail.com",
+        "cep": "06803440",
+        "estado": "SP",
+        "cidade": "Embu das Artes",
+        "bairro": "Centro",
+        "logradouro": "Rua Belo Horizonte",
+        "dataInscricao": "2025-06-16 03:18:23"
+    },
+    {
+        "codEvento": "1",
+        "nome": "Gui",
+        "email": "Teste2@gmail.com",
+        "cep": "60010120",
+        "estado": "CE",
+        "cidade": "Fortaleza",
+        "bairro": "Moura Brasil",
+        "logradouro": "Rua do Trilho",
+        "dataInscricao": "2025-06-16 03:18:53"
     }
 ]

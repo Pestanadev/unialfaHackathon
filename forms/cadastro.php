@@ -1,13 +1,13 @@
 <?php
+require_once '../classes/ViaCepService.php'; 
 require_once '../classes/ApiComNode.php';
 
 $api = new ApiComNode();
 $eventos = $api->getEventos();
 
-$cod = $_GET['cod'] ?? null;
+$cod = $_GET['cod'] ?? $_POST['cod'] ?? null;
 $eventoSelecionado = null;
 
-// Busca pelo evento
 foreach ($eventos as $evento) {
     if ($evento['cod'] == $cod) {
         $eventoSelecionado = $evento;
@@ -17,38 +17,61 @@ foreach ($eventos as $evento) {
 
 if (!$eventoSelecionado) {
 ?>
-    <!DOCTYPE html>
-    <html lang="pt-br">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Evento não encontrado</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="../style/style.css">
-    </head>
-
-    <body>
-        <?php include '../templates/header.php'; ?>
-        <div class="evento-erro-container">
-            <div class="evento-erro-card">
-                <img src="https://cdn-icons-png.flaticon.com/512/4076/4076549.png" alt="Nenhum evento encontrado">
-                <h2>Evento não encontrado</h2>
-                <p>Não encontramos o evento que você procura.<br>
-                    Verifique se o nome está correto ou veja a lista de eventos disponíveis.</p>
-                <a href="../public/listar.php" class="btn btn-primary">Ver todos os eventos</a>
-            </div>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento não encontrado</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <?php include '../templates/header.php'; ?>
+    <div class="evento-erro-container">
+        <div class="evento-erro-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/4076/4076549.png" alt="Nenhum evento encontrado">
+            <h2>Evento não encontrado</h2>
+            <p>Não encontramos o evento que você procura.<br>
+                Verifique se o nome está correto ou veja a lista de eventos disponíveis.</p>
+            <a href="../public/listar.php" class="btn btn-primary">Ver todos os eventos</a>
         </div>
-    </body>
-
-    </html>
+    </div>
+</body>
+</html>
 <?php
     exit;
+}
+
+$dadosForm = [
+    'nome' => '',
+    'email' => '',
+    'cep' => '',
+    'estado' => '',
+    'cidade' => '',
+    'bairro' => '',
+    'logradouro' => '',
+    'erroCep' => ''
+];
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['buscar_endereco'])) {
+    $dadosForm = array_merge($dadosForm, $_POST);
+
+    $viaCep = new ViaCepService();
+    $endereco = $viaCep->getEndereco($_POST['cep']);
+
+    if (isset($endereco['erro']) && $endereco['erro']) { 
+        $dadosForm['erroCep'] = 'CEP inválido ou não encontrado.';
+    } else {
+        $dadosForm['estado'] = $endereco['uf'] ?? '';
+        $dadosForm['cidade'] = $endereco['localidade'] ?? '';
+        $dadosForm['bairro'] = $endereco['bairro'] ?? '';
+        $dadosForm['logradouro'] = $endereco['logradouro'] ?? '';
+    }
 }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,7 +80,6 @@ if (!$eventoSelecionado) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="../style/cadastro.css">
 </head>
-
 <body>
     <?php include '../templates/header.php'; ?>
     <div class="evento-bg-topo"></div>
@@ -66,7 +88,7 @@ if (!$eventoSelecionado) {
             <div class="evento-info text-center">
                 <?php if (!empty($eventoSelecionado['urlImg'])): ?>
                     <div class="evento-bg-topo"
-                        style="background: url('<?= htmlspecialchars($eventoSelecionado['urlImg']) ?>') center center/cover no-repeat; filter: blur(6px) brightness(0.85);">
+                         style="background: url('<?= htmlspecialchars($eventoSelecionado['urlImg']) ?>') center center/cover no-repeat; filter: blur(6px) brightness(0.85);">
                     </div>
                 <?php endif; ?>
                 <h1><?= htmlspecialchars($eventoSelecionado['nome']) ?></h1>
@@ -110,33 +132,40 @@ if (!$eventoSelecionado) {
             </div>
         </div>
         <div class="form-box-white">
-            <form class="form-area" id="evento-form" method="POST" action="../public/evento_cadastro.php" autocomplete="off">
+            <form class="form-area" id="evento-form" method="POST" action="" autocomplete="off">
                 <input type="hidden" name="cod" value="<?= htmlspecialchars($eventoSelecionado['cod']) ?>">
                 <img src="../style/img/logo.png" alt="logo" class="logo-form">
                 <h2>Inscreva-se no Evento</h2>
+
                 <label for="nome">Nome</label>
-                <input type="text" id="nome" name="nome" placeholder="Nome: " required>
+                <input type="text" id="nome" name="nome" value="<?= htmlspecialchars($dadosForm['nome']) ?>" required>
 
                 <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" placeholder="Email: " required>
+                <input type="email" id="email" name="email" value="<?= htmlspecialchars($dadosForm['email']) ?>" required>
 
                 <label for="cep">CEP</label>
-                <input type="text" id="cep" name="cep" required pattern="\d{5}-?\d{3}" placeholder="Ex: 00000-000">
+                <input type="text" id="cep" name="cep" value="<?= htmlspecialchars($dadosForm['cep']) ?>" required pattern="\d{5}-?\d{3}" placeholder="Ex: 00000-000">
+                
+                <button type="submit" name="buscar_endereco" formnovalidate class="btn btn-secondary">Buscar Endereço</button>
+                
+                <?php if (!empty($dadosForm['erroCep'])): ?>
+                    <div class="alert alert-danger mt-2"><?= htmlspecialchars($dadosForm['erroCep']) ?></div>
+                <?php endif; ?>
 
                 <label for="estado">Estado</label>
-                <input type="text" id="estado" name="estado" placeholder="Estado: " required>
+                <input type="text" id="estado" name="estado" value="<?= htmlspecialchars($dadosForm['estado']) ?>" required>
 
                 <label for="cidade">Cidade</label>
-                <input type="text" id="cidade" name="cidade" placeholder="Cidade: " required>
+                <input type="text" id="cidade" name="cidade" value="<?= htmlspecialchars($dadosForm['cidade']) ?>" required>
 
                 <label for="bairro">Bairro</label>
-                <input type="text" id="bairro" name="bairro" placeholder="Bairro: " required>
+                <input type="text" id="bairro" name="bairro" value="<?= htmlspecialchars($dadosForm['bairro']) ?>" required>
 
                 <label for="logradouro">Logradouro</label>
-                <input type="text" id="logradouro" name="logradouro" placeholder="Logradouro: " required>
+                <input type="text" id="logradouro" name="logradouro" value="<?= htmlspecialchars($dadosForm['logradouro']) ?>" required>
 
                 <div class="termos-box">
-                    <label for="cidade">Termos de Responsabilidade</label>
+                    <label for="termos">Termos de Responsabilidade</label>
                     <div class="termos-texto" tabindex="0">
                         Ao se inscrever neste Evento, você declara estar de acordo com o nosso Código de Conduta.<br>
                         Declaro que li e aceito os Termos de Uso e a Política de Privacidade.
@@ -148,11 +177,11 @@ if (!$eventoSelecionado) {
                     </div>
                 </div>
 
-                <button type="submit">Inscrever-se</button>
+                <div class="d-flex gap-2 mt-3">
+                    <button type="submit" name="enviar_formulario" formaction="../public/evento_cadastro.php" class="btn btn-primary">Inscrever-se</button>
+                </div>
             </form>
         </div>
     </div>
-
 </body>
-
 </html>
